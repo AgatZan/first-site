@@ -1,0 +1,31 @@
+
+.social{
+    display: flex;
+    align-items: center;
+    .facebook{
+        background-image: url('/media/images/facebook-top-icon.png');
+        
+    }
+    .drible{
+        background-image: url('/media/images/top-dribble-icon.png');
+    }
+    .twitter{
+        background-image: url('/media/images/top-twitter-icon.png');
+    }
+    .mail{
+        background-image: url('/media/images/top-mail-icon.png');
+    }
+    .vimeo{
+        background-image: url('/media/images/top-vimeo-icon.png');
+    }
+    .digg{
+        background-image: url('/media/images/digg-logo.png');
+    }
+
+    a{
+        display: block;
+        width: 25px;
+        height: 25px;
+    }
+
+}

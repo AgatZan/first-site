@@ -1,0 +1,36 @@
+@import 'vars';
+@import 'resets';
+@import 'breakpoint';
+@import 'font';
+    @import 'block/border/doted';
+
+    @import 'block/header/_header.scss';
+            @import 'block/top-panel/top-panel';
+                @import 'block/social/social';
+
+                @import 'block/registraitin-panel/registration-panel';
+                    @import 'block/registraitin-panel/__login/login';
+                    @import 'block/registraitin-panel/__registration/_registration.scss';
+
+                @import 'block/basket/_basket.scss';
+                    @import 'block/basket/__goods/goods';
+
+                @import 'block/drop-down-menu/drop-down-nenu';
+
+            @import 'block/sub-panel/sub-panel';    
+                
+                @import 'block/header/_logo/logo';
+                @import 'block/navigation/navigation';
+        @import 'block/sideshow/sideshow';
+                @import 'block/sideshow/_bloks/sideshow-bloks';
+                @import 'block/sideshow/_text/text';
+
+        @import 'block/quote/quote';
+                @import 'block/styled-text/red-board';
+::-webkit-scrollbar { 
+    display: none; 
+    }
+body{
+    font-family: $main-font;
+    background-image: url('media/images/background\ copy.png');;
+}

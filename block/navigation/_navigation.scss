@@ -1,0 +1,39 @@
+.navigation{
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    gap: 32px;
+    .navigation__elements{
+        a{
+            display: block;
+            height: 60px;
+           
+
+            &::before{
+                content: '';
+                display: block;
+                height: 18px;
+            }
+            &:hover{
+                font-style: italic;
+                color:$white;    
+                
+            }
+         
+        }
+        @for $i from 1 through 4
+        {
+        &:nth-child(#{$i}) a:hover::after {
+            content: '';
+            color:$registration-back-col;
+            display: block;
+            position: absolute;
+            height: 60px+19px;
+            width: min( calc(48px* $i/2 + 32px),117px);
+            top:-19px;  
+            z-index: -1;
+            background-color: $registration-back-col;
+        }
+        }
+    }
+}

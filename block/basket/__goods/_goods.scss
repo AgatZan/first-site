@@ -1,0 +1,31 @@
+
+.basket__goods{
+
+    background-color: $red;
+    height: 100%;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    & p::before{
+        background-image: url(/media/images/basket.png);
+        content: ' ';
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        background-size: 30px 30px;
+        filter:brightness(0) invert(1);
+    }
+   & p{
+        display: inline-flex;
+        align-items: center;
+    }
+    & p::after{
+        content: ' (2)';
+    }
+    &:hover~.drop-down-menu{
+        opacity: 1;
+        display: block;
+        animation-play-state: running;
+    }
+}
