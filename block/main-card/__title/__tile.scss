@@ -1,0 +1,21 @@
+.main-card__title{
+    flex-basis: 90%;
+    font-family: $h-font;
+    font-size: 24px;
+    font-weight: 400;
+    position: absolute;
+    top:2*$main-block-top_title - 1px;
+    display: block;
+    background: url("/media/images/background.png");
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        background-color: url("/media/images/background.png"), rgba(255, 255, 255, .3);
+        display: block;
+        width: 256px;
+        border-radius:100%;
+        height: 36px;
+        z-index: -1;
+    }
+}
