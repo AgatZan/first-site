@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  white-space: nowrap;
 }
 
 a, h1, h2, p {
@@ -457,6 +456,83 @@ a, h1, h2, p {
   padding: 0 9px 4.5px;
   background-color: #cd3737;
   color: #eaeaea;
+}
+
+.help-block {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.help-box {
+  width: 300px;
+  display: inline-block;
+  margin-right: 31px;
+  border-radius: 5px;
+  position: relative;
+  transform: brightness 0.4s;
+}
+.help-box:hover {
+  filter: brightness(1.3);
+}
+
+.help-box_theme_black {
+  background-color: #1e1e20;
+  border-color: #1e1e20;
+}
+
+.help-box_theme_red {
+  background-color: #cc3333;
+  border-color: #cc3333;
+}
+
+.help-box__help-title {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  padding: 24px 31px 19px 20px;
+  font-family: "Oswald", "MyriadPro", Arial;
+  color: #fdfdfd;
+  font-weight: 400;
+}
+
+.help-box__help-text {
+  color: #fdfdfd;
+  font-size: 13px;
+  padding: 0 20px 16px;
+}
+
+.help-box__help-title_type-icon_cd::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 20px;
+  background: url("/media/images/cd-main-icon.png");
+  object-fit: cover;
+}
+
+.help-box__help-title_type-icon_headphones::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 20px;
+  background: url("/media/images/headphones-main-icon.png");
+  object-fit: cover;
+}
+
+.help-box__help-title_type-icon_calendar::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  height: 34px;
+  left: 20px;
+  background: url("/media/images/calendar-main-icon.png");
+  object-fit: cover;
 }
 
 ::-webkit-scrollbar {

@@ -3,7 +3,7 @@
 @import 'breakpoint';
 @import 'font';
     @import 'block/border/doted';
-
+    @import 'block/mixin/icon-mixin';
     @import 'block/header/_header.scss';
             @import 'block/top-panel/top-panel';
                 @import 'block/social/social';
@@ -27,6 +27,22 @@
 
         @import 'block/quote/quote';
                 @import 'block/styled-text/red-board';
+    
+        @import 'block/help-block/help-block';
+
+                @import 'block/help-block/help-box/help-box';
+                        @import 'block/help-block/help-box/_theme/theme_black';
+                        @import 'block/help-block/help-box/_theme/theme_red';            
+                    
+                    @import 'block/help-block/help-box/__help-title/_help-title';
+                    @import 'block/help-block/help-box/__help-text/_help-text';
+                            @import 'block/help-block/help-box/__help-text/_type-icon/help-text_type-icon_cd';
+                            @import 'block/help-block/help-box/__help-text/_type-icon/help-text_type-icon_headphones';
+                            @import 'block/help-block/help-box/__help-text/_type-icon/help-text_type-icon_calendar';
+
+
+
+
 ::-webkit-scrollbar { 
     display: none; 
     }

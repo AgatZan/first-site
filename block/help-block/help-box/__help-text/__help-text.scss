@@ -1,0 +1,5 @@
+.help-box__help-text{
+    color: $white;
+    font-size: 13px;
+    padding: 0 map-get($help-text-padding, hor )  map-get($help-text-padding, vert ) ;
+}
