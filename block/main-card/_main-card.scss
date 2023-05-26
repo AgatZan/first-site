@@ -1,0 +1,9 @@
+.main-card{
+    display: flex;
+    flex-wrap: wrap;
+    width: $main-width;
+    margin: 0 auto 51px;
+    gap: 14px;
+    position: relative;
+    @include dotted;
+}

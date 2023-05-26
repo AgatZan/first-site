@@ -3,6 +3,8 @@
 @import 'breakpoint';
 @import 'font';
     @import 'block/border/doted';
+    @import 'block/styled-text/red-board';
+    @import 'block/styled-text/font-weight_bold';
     @import 'block/mixin/icon-mixin';
     @import 'block/header/_header.scss';
             @import 'block/top-panel/top-panel';
@@ -26,7 +28,6 @@
                 @import 'block/sideshow/_text/text';
 
         @import 'block/quote/quote';
-                @import 'block/styled-text/red-board';
     
         @import 'block/help-block/help-block';
 
@@ -40,7 +41,48 @@
                             @import 'block/help-block/help-box/__help-text/_type-icon/help-text_type-icon_headphones';
                             @import 'block/help-block/help-box/__help-text/_type-icon/help-text_type-icon_calendar';
 
+        @import "block/main-card/main-card";
+            @import "block/arrow/arrow";
+                    @import "block/arrow/_direction/direction-left";
+                    @import "block/arrow/_direction/direction-right";
+            @import "block/main-card/__title/_tile";
 
+        @import"block/album-card/_album-card.scss";
+                // @import "/block/album-card/_theme/mini";
+                // @import "/block/album-card/_orientation/vertical";
+                // @import "/block/album-card/_orientation/horizontal";
+          
+           
+            // @import "/block/album-card/__cover/_cover";
+
+            // @import "/block/album-card/__information/_information";
+
+            //   @import "block/album-card/title/_title";
+
+            //   @import "/block/album-card/__author/_author";
+
+            //   @import "/block/album-card/__estimation/_estimation";
+            //     @import "/block/album-card/__score/_score";
+            //       @import "/block/album-card/__star/_star";
+            //               @import "block/album-card/__star/_state/active";
+            //               @import "block/album-card/__star/_state/unactive";
+
+            //   @import "/block/album-card/__description/_description";
+                            
+            // @import "/block/album-card/__price/_price";
+            //         @import "/block/album-card/__price/_price-type/price-type_dollar";
+
+            // @import "/block/album-card/__buy-button/_buy-button";
+            
+            
+
+
+
+
+
+            
+
+                
 
 
 ::-webkit-scrollbar { 

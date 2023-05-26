@@ -3,7 +3,7 @@
         position: relative;
     }
     div[class*=bloks] {
-        height: 26vw;
+        height: 27vw;
         @include tablet{
             height: map-get($map: $slider-img-size, $key:height );
         }
@@ -12,10 +12,14 @@
         }
     }
     .sideshow__bloks2 img{
-        width: 58vw;
-        @include tablet
+         width: 60vw;        
+    
+    }
+    @include tablet-up
+    {
+        .sideshow__bloks2 img
         {
-        width: map-get($slider-img-size, width );
+            width: map-get($slider-img-size, width );       
         }
     }
     .sideshow__bloks2 {
@@ -26,10 +30,10 @@
     }
     .sideshow__bloks1 img, .sideshow__bloks3 img
     {
-        width: 20vw;
-        @include tablet
+        width: 321px;
+        @include sDev
         {
-            width: 321px;
+        width: 20.6vw;
         }
     }   
 }
@@ -37,7 +41,7 @@
 .sideshow__bloks1::before{
     content: "";
     display: block;
-    background: url(/media/images/arrow-right.png) no-repeat center center, rgba(0, 0, 0,.3);
+    background: url(/media/images/sideshow-arrow_left.png) no-repeat center center, rgba(0, 0, 0,.3);
     width: 80px;    
     height: 80px;
     border-radius:100%;
@@ -56,7 +60,7 @@
 .sideshow__bloks3::before{
     content: "";
     display: block;
-    background: url(/media/images/arrow-left.png) no-repeat center center, rgba(0, 0, 0,.3);
+    background: url(/media/images/sideshow_arrow-right.png) no-repeat center center, rgba(0, 0, 0,.3);
     width: 80px;    
     height: 80px;
     border-radius:100%;
