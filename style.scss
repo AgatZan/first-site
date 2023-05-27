@@ -52,9 +52,10 @@
                 // @import "/block/album-card/_orientation/vertical";
                 // @import "/block/album-card/_orientation/horizontal";
           
-           
-            // @import "/block/album-card/__cover/_cover";
-
+            @import "block/album-card/__container-image/_container-image";
+            @import "block/album-card/__cover/_cover";
+                    @import "block/album-card/__cover/_special/special";
+                    @import "block/album-card/__cover/_discount/discount";
             // @import "/block/album-card/__information/_information";
 
             //   @import "block/album-card/title/_title";

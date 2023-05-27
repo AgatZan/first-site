@@ -24,7 +24,7 @@
 }
 
 @mixin tablet{
-    @media ((max-width: map-get( $media-size, Comp)) and (min-width:map-get( $media-size, tablet)  )) {
+    @media ((max-width: map-get( $media-size, Comp) ) and (min-width:map-get( $media-size, tablet)  )) {
         @content;
     }
 }

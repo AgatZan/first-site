@@ -4,14 +4,13 @@
     color: $white;
     height: $sideshow_text-height;
     width: 100%;
-    top:26vw-3.2vw;
+    top:24vw;
     @include tablet
         { 
         top:map-get($slider-img-size, height )-46px;
         }
     padding: calc(map-get($sideshow_text-paddint, vert) / 2) map-get($sideshow_text-paddint, hor );
-    background-color: $red;
-    opacity: .8;
+    background-color: rgba($red,.8);
     font-family: $h-font;
     font-size: $m-font-size;
 }

@@ -1,0 +1,28 @@
+.album-card__cover_special{
+      
+    &::before
+    {
+    border-radius: 3px;
+    background:rgba(0, 0, 0, .8);
+    position: absolute;
+    content: '';
+    display: block;
+    top:0;
+    width: 220px;
+    height: 220px;
+    transform: translate(2%, 2%);
+    z-index: 1;
+    }
+    &::after
+    {
+    background:no-repeat url(/media/images/albums/album-main-4.png) center center;
+    filter: brightness(1);
+    position: absolute;
+    content: '';
+    display: block;
+    top:0;
+    width: $main-cover-size;
+    height: $main-cover-size;
+    z-index: 2;
+    }
+}
