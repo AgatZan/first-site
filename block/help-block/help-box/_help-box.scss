@@ -5,7 +5,7 @@
         margin-right: 31px;
         border-radius: 5px;
         position: relative;
-        transform: brightness .4s;
+        transition: filter .6s;
         &:hover{
                 filter: brightness(1.3);
         }
