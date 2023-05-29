@@ -1,0 +1,9 @@
+.drop-down-menu__view{
+    color:$white;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 7px;
+    &::after{
+        content: url("/media/images/drop-down-arrow.png");
+    }
+}

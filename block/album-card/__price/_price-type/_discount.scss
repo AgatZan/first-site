@@ -1,0 +1,16 @@
+.album-card__price_price-type_discount{
+    text-decoration: line-through;
+    &::before{
+        text-decoration: line-through;
+    }
+    &::after{
+        content: "$8.99";
+        display: inline-block;
+        margin-left:9px;
+        color: $white;
+        background-color: $red;
+        width: 42px;
+        height: 17px;
+        font-size: 15px;
+    }
+}

@@ -24,8 +24,13 @@
         content: ' (2)';
     }
     &:hover~.drop-down-menu{
-        opacity: 1;
+         opacity: 1;
         display: block;
         animation-play-state: running;
     }
+    // &:active~.drop-down-menu{
+    //     // opacity: 1;
+    //     display: block;
+    //     animation-play-state: running;
+    // }
 }

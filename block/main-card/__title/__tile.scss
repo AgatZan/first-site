@@ -19,3 +19,8 @@
         z-index: -1;
     }
 }
+.main-card_users .main-card__title::after{
+    margin-bottom: 26px;
+    content: "";
+    display: block;
+}

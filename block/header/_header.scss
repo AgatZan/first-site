@@ -1,14 +1,14 @@
 
 .header{
-    margin-bottom:20px ;
+    border-top: 3px solid $red;
     &::after{
         content: ' ';
         display: block;
         position: absolute;
         width: 100%;
-        height: 41px;
+        height: 32px;
         top: 0;
-        border-top: 3px solid $red;
+        
         background-color: $registration-back-col;
         z-index: -1;
     }

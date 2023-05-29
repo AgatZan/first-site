@@ -4,6 +4,7 @@
 @import 'font';
     @import 'block/border/doted';
     @import 'block/styled-text/red-board';
+    @import 'block/styled-text/grey-border';
     @import 'block/styled-text/font-weight_bold';
     @import 'block/mixin/icon-mixin';
     @import 'block/header/_header.scss';
@@ -18,6 +19,17 @@
                     @import 'block/basket/__goods/goods';
 
                 @import 'block/drop-down-menu/drop-down-nenu';
+                    
+                    @import 'block/drop-down-menu/__total-price/_total-price';
+                    @import 'block/drop-down-menu/__cost-text/_cost-text';
+                    @import 'block/drop-down-menu/__cost-value/_cost-value';
+                    @import 'block/drop-down-menu/__user-choose/_user-choose';
+                    @import 'block/drop-down-menu/__view/_view';
+                    @import 'block/drop-down-menu/__checkout/_checkout';
+
+
+
+
 
             @import 'block/sub-panel/sub-panel';    
                 
@@ -42,39 +54,54 @@
                             @import 'block/help-block/help-box/__help-text/_type-icon/help-text_type-icon_calendar';
 
         @import "block/main-card/main-card";
+            @import "block/main-card/__publisher-block/_publisher-block";
+            @import "block/main-card/_users/users";
+                @import "block/main-card/_users/users";
+                @import "block/main-card/__publishers/_publishers";
+                @import "block/main-card/__publishers/_company/Base";
+                @import "block/main-card/__publishers/_company/bird";
+                @import "block/main-card/__publishers/_company/inspired";
+                @import "block/main-card/__publishers/_company/man";
+                @import "block/main-card/__publishers/_company/plant";
+                @import "block/main-card/__publishers/_company/wattermellow";
+                @import "block/main-card/__publishers/_company/your";
+                
+
+
+
+
             @import "block/arrow/arrow";
                     @import "block/arrow/_direction/direction-left";
                     @import "block/arrow/_direction/direction-right";
             @import "block/main-card/__title/_tile";
 
         @import"block/album-card/_album-card.scss";
-                // @import "/block/album-card/_theme/mini";
-                // @import "/block/album-card/_orientation/vertical";
-                // @import "/block/album-card/_orientation/horizontal";
+                @import "block/album-card/_theme/mini";
+                @import "block/album-card/_orientation/vertical";
+                @import "block/album-card/_orientation/horizontal";
           
             @import "block/album-card/__container-image/_container-image";
             @import "block/album-card/__cover/_cover";
                     @import "block/album-card/__cover/_special/special";
                     @import "block/album-card/__cover/_discount/discount";
-            // @import "/block/album-card/__information/_information";
+            @import "block/album-card/__information/_information";
 
-            //   @import "block/album-card/title/_title";
+               @import "block/album-card/__title/_title";
 
-            //   @import "/block/album-card/__author/_author";
+               @import "block/album-card/__author/_author";
 
-            //   @import "/block/album-card/__estimation/_estimation";
-            //     @import "/block/album-card/__score/_score";
-            //       @import "/block/album-card/__star/_star";
-            //               @import "block/album-card/__star/_state/active";
-            //               @import "block/album-card/__star/_state/unactive";
+              @import "block/album-card/__estimation/_estimation";
+                @import "block/album-card/__score/_score";
+                  @import "block/album-card/__star/_star";
+                          @import "block/album-card/__star/_state/active";
+                          @import "block/album-card/__star/_state/unactive";
 
-            //   @import "/block/album-card/__description/_description";
+              @import "block/album-card/__description/_description";
                             
-            // @import "/block/album-card/__price/_price";
-            //         @import "/block/album-card/__price/_price-type/price-type_dollar";
-
-            // @import "/block/album-card/__buy-button/_buy-button";
-            
+            @import "block/album-card/__price/_price";
+                    @import "block/album-card/__price/_price-type/price-type_dollar";
+                    @import "block/album-card/__price/_price-type/discount";
+            @import "block/album-card/__buy-button/_buy-button";
             
 
 

@@ -1,0 +1,8 @@
+.drop-down-menu__checkout{
+    color:$white;
+    font-size: 12px;
+    display: inline-block;
+    &::after{
+        content: url("/media/images/drop-down-arrow.png");
+    }
+}

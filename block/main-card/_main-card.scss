@@ -6,4 +6,7 @@
     gap: 14px;
     position: relative;
     @include dotted;
+    &::after{
+        content: none;
+    }
 }
