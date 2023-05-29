@@ -1,0 +1,16 @@
+@include bg-img(inspired);
+.main-card__publisher-block:has(.main-card__publishers_company_inspired)
+{
+    flex-wrap: wrap;
+    &::after{
+           content: 'InspiredTemplate';
+            font-size: 15px;
+            font-family: "Arial";
+            color: rgb(28, 28, 28);
+            position: absolute;
+            display: inline;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+}
+}

@@ -1,7 +1,9 @@
 .sub-panel{
     width: $main-width;
-    margin: 0 auto;
+    margin: -2px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 96px;
+    
 }

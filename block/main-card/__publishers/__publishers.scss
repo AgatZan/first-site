@@ -1,0 +1,9 @@
+.main-card__publishers{
+    display: block;
+    width: $publishers-img-w;
+    height: $publishers-img-h;
+    text-indent: -9999px;
+    opacity: 0.85;
+    transition-duration: 0.3s;
+    transition-property: opacity;
+}
