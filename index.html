@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.min.css">
     <link rel="icon" type="image/x-icon" href="/media/images/Favicon.ico">
     <title>M store</title>
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="top-panel">
             <div class="social">
                 <a href="https://www.facebook.com" class="facebook"></a>
@@ -310,63 +310,78 @@
         </div>
 
     </section>
-        <!-- <footer class="footer">
-            <div class="arrow arrow-direction_up"><a href="#logo"></a></div>
+        <footer class="footer">
+            <div class="arrow arrow-direction_up"><a href="#header"></a></div>
             <div class="important-info">
-                <div class="important-info__box-about">
-                    <h2 class="important-info__box-title">Little about us</h2>
-                    <p class="important-info__text">
-                        <span class="font-weight_bold">Sed posuere</span> consectetur  est at.
-                        Nulla vitae elit libero, a pharetra.
-                        Lorem ipsum <span class="font-weight_bold">dolor sit</span> amet, conse ctetuer adipiscing elit.
-                    </p>
-                </div>
-                <div class="important-info__box-social">
-                    <h2 class="important-info__box-title">Sociallize with us</h2>
-                    <div class="social">
-                    https://www.facebook.comop-icon.png" class="facebook"></a>
-                    <a href="http://twitter.com" class="twitter"></a>
-                    <a href="https://dribbble.com" class="drible"></a>
-                    <a href="media/images/digg-logo.png" class="digg"></a>
-                    <a href="media/images/top-mail-icon.png" class="mail"></a>
+
+                <div class="grid-elem">
+                    <div class="important-info__box-about">
+                        <h2 class="important-info__box-title">Little about us</h2>
+                        <p class="important-info__text">
+                            <span class="font-weight_bolder">Sed posuere</span> consectetur  est at.
+                            Nulla vitae elit libero, a pharetra.
+                            Lorem ipsum <span class="font-weight_bolder">dolor sit</span> amet, conse ctetuer adipiscing elit.
+                        </p>
+                    </div>
+                    <div class="important-info__box-social">
+                        <h2 class="important-info__box-title">Sociallize with us</h2>
+                        <div class="social social_theme_black">
+                        <a href="http://facebook.com/" class="facebook"></a>
+                        <a href="http://twitter.com" class="twitter"></a>
+                        <a href="https://dribbble.com" class="drible"></a>
+                        <a href="https://digg.com" class="digg"></a>
+                        <a href="https://mail.google.com" class="mail"></a>
+                        </div>
                     </div>
                 </div>
-                <div class="important-info__box-archive">
-                    <h2 class="important-info__box-title">Our Archives</h2>
-                    <p class="important-info__data">March 2012</p>
-                    <p class="important-info__data">February 2012</p>
-                    <p class="important-info__data">January 2012</p>
-                    <p class="important-info__data">December 2011</p>
-                </div>
-                <div class="imortant-info__box-relevante">
-                    <h2 class="important-info__box-title">Popular Posts</h2>
-                    <div class="album-card album-card_theme_mini">
-                        <img src="media/images/albums/album-main-2.png" alt="1" class="album-card__cover">
-                        <h2 class="album-card__title">Great Album</h2>
-                        <span class="album-card__comment"> COMMENTS</span>
+                    <div class="important-info__box-archive">
+                        <h2 class="important-info__box-title">Our Archives</h2>
+                        <a href="#" class="important-info__data">March 2012      </a>
+                        <a href="#" class="important-info__data">February 2012   </a>
+                        <a href="#" class="important-info__data">January 2012    </a>
+                        <a href="#" class="important-info__data">December 2011   </a>
                     </div>
-                    <div class="album-card album-card_theme_mini">
-                        <img src="media/images/albums/album-main-3.png" alt="2" class="album-card__cover">
-                        <h2 class="album-card__title">Great Album</h2>
-                        <span class="album-card__comment"> COMMENTS</span>
+                    <div class="imortant-info__box-relevante">
+                        <h2 class="important-info__box-title">Popular Posts</h2>
+                        <div class="album-card album-card_theme_mini">
+                            <img src="media/images/albums/album-main-2.png" alt="1" class="album-card__cover">
+                            
+                            <div class="convert">
+                                <h2 class="album-card__title">Great Album</h2>
+                                <span class="album-card__comment">12 COMMENTS</span>
+                            </div>
+                        </div>
+                        <div class="album-card album-card_theme_mini">
+                            <img src="media/images/albums/album-main-3.png" alt="2" class="album-card__cover">
+                            
+                            <div class="convert">
+                                <h2 class="album-card__title">Great Album</h2>
+                                <span class="album-card__comment">12 COMMENTS</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="box-search">
-                    <h2 class="important-info__box-title">Search our Site</h2>
-                    <form class="search-form" action="#">
-                        <input type="search" class="search-input" placeholder="Enter Search ...">
-                        <button class="button">Search</button>
-                    </form>
-                </div>
-                <div class="box-tag">
-                    <h2 class="box-tag__box-title">Tag Cloud</h2>
-                    <a href="#" class="box-tag__tag">Audio CD</a>
-                    <a href="#" class="box-tag__tag">Video</a>
-                    <a href="#" class="box-tag__tag">Playlist</a>
-                    <a href="#" class="box-tag__tag">Avantgarde</a>
-                    <a href="#" class="box-tag__tag">Melancholic</a>
+                <div class="grid-elem">
+                    <div class="box-search">
+                        <h2 class="important-info__box-title">Search our Site</h2>
+                        <form class="search-form" action="#">
+                            <input type="search" class="search-input" placeholder="Enter Search ...">
+                            <!-- <button class="search-form__button">Search</button> -->
+                        </form>
+                    </div>
+                    <div class="box-tag">
+                        <h2 class="box-tag__box-title">Tag Cloud</h2>
+                        <a href="#" class="box-tag__tag">Audio CD</a>
+                        <a href="#" class="box-tag__tag">Video</a>
+                        <a href="#" class="box-tag__tag">Playlist</a>
+                        <a href="#" class="box-tag__tag">Avantgarde</a>
+                        <a href="#" class="box-tag__tag">Melancholic</a>
+                    </div>
                 </div>
             </div>
+
+
+      
+        </footer>
         <div class="lover-info">
             <ul class="lover-info__menu-list">
                 <li class="lover-info__element-list"><a href="index.html" class="lover-info__menu-link">Home</a></li>
@@ -376,7 +391,5 @@
             </ul>
             <p class="lover-info__copyright-block">Musica @2013 by PremiumCoding | All Rights Reserved</p>
         </div>
-        </footer> -->
 </body>
 </html>
-</div>
