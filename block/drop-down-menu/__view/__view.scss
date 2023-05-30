@@ -3,7 +3,11 @@
     display: inline-block;
     font-size: 12px;
     margin-right: 7px;
+    transition: filter .2s;
     &::after{
         content: url("/media/images/drop-down-arrow.png");
     }
+    &:hover{
+        filter: brightness(1.6);
+}
 }

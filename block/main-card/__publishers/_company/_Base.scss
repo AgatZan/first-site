@@ -4,5 +4,9 @@
         object-fit: cover;
         // position: absolute;
         z-index: 1;
+        transition: filter .1s;
+        &:hover, &::after{
+            filter:sepia(1);
+        }
     }
 }
