@@ -48,7 +48,11 @@
         @content;
     }
 }
-
+@mixin sDev-d{
+    @media (max-width:map-get( $media-size, sDevice ) ){
+        @content;
+    }
+}
 @mixin sDev{
     @media ( (max-width: map-get( $media-size, tablet)) and (min-width:map-get( $media-size, sDevice))) {
         @content;
