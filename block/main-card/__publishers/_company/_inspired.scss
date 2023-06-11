@@ -1,5 +1,6 @@
 @include bg-img(inspired);
-.main-card__publisher-block:has(.main-card__publishers_company_inspired)
+// /*.main-card__publisher-block:has(.main-card__publishers_company_inspired),*/ 
+ .main-card__publisher-block:nth-child(4)
 {
     flex-wrap: wrap;
     &::after{
@@ -9,8 +10,8 @@
             color: rgb(28, 28, 28);
             position: absolute;
             display: inline;
-            bottom: 5px;
-            left: 50%;
+            bottom: 10px;
+            left: 53%;
             transform: translateX(-50%);
 }
 }

@@ -1,5 +1,10 @@
 .album-card__description{
     font-size: 13px;
     line-height: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    letter-spacing: -.1px;
+    .font-weight_bold{
+    display: inline-block;
+    margin-right: 1px;
+    }
 }

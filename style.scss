@@ -55,6 +55,7 @@
                             @import 'block/help-block/help-box/__help-text/_type-icon/help-text_type-icon_headphones';
                             @import 'block/help-block/help-box/__help-text/_type-icon/help-text_type-icon_calendar';
 
+        @import "block/link-album/link-album";
         @import "block/main-card/main-card";
             @import "block/main-card/__publisher-block/_publisher-block";
             @import "block/main-card/_users/users";
@@ -98,6 +99,10 @@
                           @import "block/album-card/__star/_state/active";
                           @import "block/album-card/__star/_state/unactive";
 
+
+             @import 'block/album-card/__genres/_genres';
+             @import 'block/album-card/__date/_date';
+             @import 'block/album-card/__user-score/_user-score';
               @import "block/album-card/__description/_description";
                             
             @import "block/album-card/__price/_price";
@@ -140,7 +145,7 @@
             
 
 @import "block/adaptive";
-
+// @import "block/_flex-block/flex-block";
 
 
             

@@ -1,6 +1,7 @@
 @include bg-img(wattermellow);
 
-.main-card__publisher-block:has(.main-card__publishers_company_wattermellow)
+// /*.main-card__publisher-block:has(.main-card__publishers_company_wattermellow),*/ 
+.main-card__publisher-block:first-of-type
 {
     flex-wrap: wrap;
     &::after{
@@ -14,8 +15,8 @@
         -webkit-background-clip: text;
         position: absolute;
         display: inline;
-        bottom: 5px;
-        left: 50%;
+        bottom: 0px;
+        left: 53%;
         transform: translateX(-50%);
 }
 }

@@ -1,20 +1,21 @@
 .sideshow{
     div[class*=bloks]{
         position: relative;
+        
     }
     div[class*=bloks] {
-        height: 27vw;
         @include tablet{
             height: map-get($map: $slider-img-size, $key:height );
         }
         img {
             object-fit: cover;
+            display: block;
         }
     }
-    .sideshow__bloks2 img{
-         width: 60vw;        
+    // .sideshow__bloks2 img{
+    //      width: 100%;        
     
-    }
+    // }
     @include tablet-up
     {
         .sideshow__bloks2 img
@@ -28,20 +29,20 @@
         border-bottom: none;
         // margin:0  $slider-border-size 0 0;
     }
-    .sideshow__bloks1 img, .sideshow__bloks3 img
-    {
-        width: 321px;
-        @include sDev
-        {
-        width: 20.6vw;
-        }
-    }   
+    // .sideshow__bloks1 img, .sideshow__bloks3 img
+    // {
+    //     width: 321px;
+    //     @include sDev
+    //     {
+    //     width: 20.6vw;
+    //     }
+    // }   
 }
 
 .sideshow__bloks1::before{
     content: "";
     display: block;
-    background: url(/media/images/sideshow-arrow_left.png) no-repeat center center, rgba(0, 0, 0,.3);
+    background: url('media/images/sideshow-arrow_left.png') no-repeat center center, rgba(0, 0, 0,.3);
     width: 80px;    
     height: 80px;
     border-radius:100%;
@@ -60,7 +61,7 @@
 .sideshow__bloks3::before{
     content: "";
     display: block;
-    background: url(/media/images/sideshow_arrow-right.png) no-repeat center center, rgba(0, 0, 0,.3);
+    background: url('media/images/sideshow_arrow-right.png') no-repeat center center, rgba(0, 0, 0,.3);
     width: 80px;    
     height: 80px;
     border-radius:100%;

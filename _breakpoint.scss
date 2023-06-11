@@ -44,7 +44,7 @@
 }
 
 @mixin sDev-down{
-    @media (max-width: (map-get( $media-size, tablet) - 3px) ){
+    @media (max-width: (map-get( $media-size, tablet) - 1px) ){
         @content;
     }
 }

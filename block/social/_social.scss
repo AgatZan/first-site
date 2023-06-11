@@ -2,28 +2,28 @@
 .social{
     display: flex;
     align-items: center;
-    height: 25px;
-    margin-bottom: 5px;
-    margin-top: 2px;
-    gap: 5px;
+    height: 32px;
+    // margin-bottom: 5px;
+    // margin-top: 2px;
+    gap: 2px;
     .facebook{
-        background:no-repeat center center/23px 23px url('/media/images/facebook-top-icon.png');
+        background:no-repeat center center/25px 25px url('media/images/facebook-top-icon.png');
         
     }
     .drible{
-        background:no-repeat center center/23px 23px url('/media/images/top-dribble-icon.png');
+        background:no-repeat center center/25px 25px url('media/images/top-dribble-icon.png');
     }
     .twitter{
-        background:no-repeat center center/23px 23px url('/media/images/top-twitter-icon.png');
+        background:no-repeat center center/25px 25px url('media/images/top-twitter-icon.png');
     }
     .mail{
-        background:no-repeat center center/23px 23px url('/media/images/top-mail-icon.png');
+        background:no-repeat center center/25px 25px url('media/images/top-mail-icon.png');
     }
     .vimeo{
-        background:no-repeat center center/23px 23px url('/media/images/top-vimeo-icon.png');
+        background:no-repeat center center/25px 25px url('media/images/top-vimeo-icon.png');
     }
     .digg{
-        background: no-repeat url('/media/images/digg-logo.png') center center;
+        background: no-repeat url('media/images/digg-logo.png') center center;
     }
 
     a{

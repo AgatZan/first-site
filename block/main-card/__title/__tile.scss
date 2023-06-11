@@ -4,9 +4,10 @@
     font-size: 24px;
     font-weight: 400;
     position: absolute;
-    top:2*$main-block-top_title - 1px;
+    top: -19px;
     display: block;
-    background: url("/media/images/background.png");
+    background:transparent url("media/images/background.png");
+    letter-spacing: 1.2px;
     &::before{
         content: "";
         position: absolute;
