@@ -1,11 +1,10 @@
 .album-card_orientation-horizontal{
-    margin: 0;
     width: 100%;
     display: inline-block;
     color: $dark-grey;
     box-shadow: none;
     position: relative;
-    margin: 0;
+    margin: 1px 0 0 0;
     border-bottom: transparent 1px solid;
     border-top: none;
     &::after{
@@ -13,36 +12,47 @@
         display: block;
         width: 99%;
         border: 1px solid transparent;
-        border-image: url('/media/images/quote_border.png') 1 300/ 1px;
+        border-image: url('media/images/quote_border.png') 1 300/ 1px;
     }
     .album-card__container-image{
         display: inline-block;
-        margin: 15px 10px 15px 16px;
+        height: auto;
+        margin: 7px 10px 17px 15px;
         .album-card__cover{
             width: 60px;
             height: 60px;
             margin: 0;
         }
     }
+
+
+
     .album-card__title{
         font-size: 13px;
-       
+        margin: 0px 0px 0px -4px;
+        letter-spacing: -.2px;
     }
     .album-card__author{
-        font-size: 12px;
+        font-size: 13px;
+        display: inline-block;
+        margin-left: -6px;
         &::after{
-        font-size: 12px;
+        font-size: 13px;
         margin-left: 12px;
+        margin-right: 2px;
+        margin: 0px 0px 0px -6px;
         }
     }
     .album-card__information{
         padding: 0;
         display: inline-block;
-        margin-top: 21px;
+        margin-top: 7px;
         vertical-align:top;
     }
    .album-card__estimation{
-    margin: 7px 0 0 0;
+    margin: 3px 0 0 -5px;
+    display: flex;
+    gap: 1px;
    }
    .album-card__price
    {
@@ -53,7 +63,7 @@
         display: inline-block;
         font-size: 14px;
         
-        margin: 19px 0 0  50px;
+        margin: 7px 0 0 48px;
 
            
     }
@@ -69,12 +79,16 @@
         height: 16px;
         text-align: center;
         position: absolute;
-        right: 14px;
+        right: 15px;
+        bottom: -19px;
     }
 
 }}
 @for $i from 1 through 2 {
     .album-card_orientation-horizontal:nth-child(#{$i}) {
-      .album-card__title::before{content:  '#{$i} x ';}
+      .album-card__title::before{
+        content:  '#{$i} x';
+        padding-right: 3px;
+    }
     }
   }

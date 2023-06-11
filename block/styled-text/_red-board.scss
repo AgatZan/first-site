@@ -1,7 +1,10 @@
 .styled-text_red-board{
-    display: inline-block;
-    padding: 0 $styled-text_board_padding calc($styled-text_board_padding/2);
+    padding: 0 $styled-text_board_padding+3px calc($styled-text_board_padding/2);
     background-color: $mid-light-red;
     color:$dirt-white;
-   
+    width: 148px;
+    height: 52px;
+    margin: 0px 20px 0px 0px;
+    display: inline-flex;
+    align-items: center;
 }

@@ -2,13 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top:14px;
+    margin-top: 4px;
     &::after{
         content: "";
         display: block;
         width: 348px;
         flex-basis: 100%;
-        margin-top: 14px;
+        margin-top: 7px;
         border: 1px solid transparent;
         border-image: url('/media/images/quote_border.png') 1 300/ 1px;
     }

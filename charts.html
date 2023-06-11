@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="charts.min.css">
+    <link rel="icon" type="image/x-icon" href="media/images/Favicon.ico">
+    <title>M store</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="top-panel">
+            <div class="social">
+                <a href="https://www.facebook.com" class="facebook"></a>
+                <a href="https://dribbble.com" class="drible"></a> 
+                <a href="https://twitter.com" class="twitter"></a>
+                <a href="mailto:tinderbox@foo.invalid" class="mail"></a>
+                <a href="https://vimeo.com" class="vimeo"></a>
+            </div>
+            <div class="registration-panel">
+                <dialog id="logDialog">
+                    <form method="dialog">
+                        <fieldset>
+                            <label for="log-log">Login: </label>
+                                <input id="log-log" type="text" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="log-pass">Password: </label>
+                                <input id="log-pass" type="password" required>
+                        </fieldset>
+                        <button type="submit">Log in</button>
+                        <button class="close" onclick="logDialog.close()">Close</button>
+                    </form>
+                </dialog>
+                <dialog id="regDialog">
+                    <form method="dialog">
+                        <fieldset>
+                            <label for="login">Login: </label>
+                            <input id="login" type="text" placeholder="Alini" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="email">Email: </label>
+                            <input id="email" type="email" placeholder="exemaple@mail" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="pass">Password: </label>
+                            <input id="pass" type="password" placeholder="123456" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="cpass">Confirm Password: </label>
+                            <input id="cpass" type="password"  required>
+                        </fieldset>
+                        <button type="submit">Sign up</button>
+                        <button class="close" onclick="regDialog.close()">Close</button>
+                    </form>
+                </dialog>
+                <a href="#" class="registration-panel__login" onclick="logDialog.showModal()">Login</a>
+                <a href="#" class="registration-panel__register" onclick="regDialog.showModal()">Register</a>
+               
+
+                <div class="basket">
+                    <a href="#drop-down" class="basket__goods">
+                        <p>Cart</p>
+                    </a>                     
+                     <div id="drop-down" class="drop-down-menu">
+                        <div class="album-card album-card_orientation-horizontal">
+                            <div class="pos"></div>
+                            <div class="album-card__container-image"><img src="media/images/albums/album-main-1-discount.png" alt="first" class="album-card__cover"></div>
+                            <div class="album-card__information">
+                                <h2 class="album-card__title">Album Title</h2>
+                                <span class="album-card__author">Artist</span>
+                                <ul class="album-card__estimation">
+                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                    <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                                </ul>                                   
+                            </div>
+                       
+                            <div class="album-card__price">
+                                <span class="album-card__price-value album-card__price_price-type_dollar">14.99</span>
+                                <div class="albim-card__delete">x</div>
+                            </div>
+                        </div>
+                        <div class="album-card album-card_orientation-horizontal">
+                            <div class="pos"></div>
+                            <div class="album-card__container-image"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></div>
+                            <div class="album-card__information" >
+                                <h2 class="album-card__title">Album Title</h2>
+                                <span class="album-card__author">Artist</span>
+                                <ul class="album-card__estimation">
+                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                    <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                                </ul>
+                                                               
+                            </div>
+                       
+                            <div class="album-card__price">
+                                <span class="album-card__price-value album-card__price_price-type_dollar">27.59</span>
+                                <div class="albim-card__delete">x</div>
+                            </div>
+                        </div>
+                        <div class="drop-down-menu__total-price">
+                            <div class="drop-down-menu__total-cost-text">Total delivery cost: </div>
+                            <div class="drop-down-menu__total-cost-value album-card__price_price-type_dollar">42,58</div>
+                        </div>
+                        <div class="drop-down-menu__user-choose">
+                            <a href="" class="drop-down-menu__view styled-text_grey-border">View Card</a>
+                            <a href="" class="drop-down-menu__checkout styled-text_grey-border">Proceed to Checkout</a></div>    
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div class="sub-panel">
+            <a href="index.html" class="header__logo">
+                <img id="logo" src="media/images/logo.png" alt="logo" class="header__logo-image" > <!--srcset="media/images/logo.svg" -->
+                <span class="header__logo-decore">M</span>
+                <span class="header__logo-title">Store</span>
+            </a>    
+            <nav class="navigation">
+                <div class="navigation__elements"><a href="index.html">HOME        </a></div>
+                <div class="navigation__elements"><a href="cd.html">CD's        </a></div>
+                <div class="navigation__elements"><a href="charts.html">CHARTS      </a></div>
+                <div class="navigation__elements"><a href="collection.html">COLLECTION's</a></div>
+
+            </nav>
+        </div>
+    </header>
+   
+    <section class="main">
+
+        <div class="charts-block">
+            <div class="album-card album-card_orientation-horizontal">
+                <div class="pos"></div>
+                <div class="album-card__container-image"><a href="" class="album-link"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></a></div>
+                <div class="album-card__information" >
+                    <h2 class="album-card__title">Album Title</h2>
+                    <span class="album-card__author">Artist</span>
+                    <span class="album-card__date">Jun 20 1970</span>
+                    <span class="album-card__genres">Rock, Agant-garde, Pop</span>                   
+                </div>
+                <div class="estimation">
+                    <div> User score:
+                        <ul class="album-card__estimation by_people">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                    <div> Critic score:
+                        <ul class="album-card__estimation by_critic">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                </div>                              
+            </div>
+            <div class="album-card album-card_orientation-horizontal">
+                <div class="pos"></div>
+                <div class="album-card__container-image"><a href="" class="album-link"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></a></div>
+                <div class="album-card__information" >
+                    <h2 class="album-card__title">Album Title</h2>
+                    <span class="album-card__author">Artist</span>
+                    <span class="album-card__date">Jun 20 1970</span>
+                    <span class="album-card__genres">Rock, Agant-garde, Pop</span>                   
+                </div>
+                <div class="estimation">
+                    <div> User score:
+                        <ul class="album-card__estimation by_people">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                    <div> Critic score:
+                        <ul class="album-card__estimation by_critic">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                </div>                                 
+            </div>
+            <div class="album-card album-card_orientation-horizontal">
+                <div class="pos"></div>
+                <div class="album-card__container-image"><a href="" class="album-link"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></a></div>
+                <div class="album-card__information" >
+                    <h2 class="album-card__title">Album Title</h2>
+                    <span class="album-card__author">Artist</span>
+                    <span class="album-card__date">Jun 20 1970</span>
+                    <span class="album-card__genres">Rock, Agant-garde, Pop</span>                   
+                </div>
+                <div class="estimation">
+                    <div> User score:
+                        <ul class="album-card__estimation by_people">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                    <div> Critic score:
+                        <ul class="album-card__estimation by_critic">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                </div>                               
+            </div>
+            <div class="album-card album-card_orientation-horizontal">
+                <div class="pos"></div>
+                <div class="album-card__container-image"><a href="" class="album-link"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></a></div>
+                <div class="album-card__information" >
+                    <h2 class="album-card__title">Album Title</h2>
+                    <span class="album-card__author">Artist</span>
+                    <span class="album-card__date">Jun 20 1970</span>
+                    <span class="album-card__genres">Rock, Agant-garde, Pop</span>                   
+                </div>
+                <div class="estimation">
+                    <div> User score:
+                        <ul class="album-card__estimation by_people">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                    <div> Critic score:
+                        <ul class="album-card__estimation by_critic">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                </div>                                
+            </div>
+            <div class="album-card album-card_orientation-horizontal">
+                <div class="pos"></div>
+                <div class="album-card__container-image"><a href="" class="album-link"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></a></div>
+                <div class="album-card__information" >
+                    <h2 class="album-card__title">Album Title</h2>
+                    <span class="album-card__author">Artist</span>
+                    <span class="album-card__date">Jun 20 1970</span>
+                    <span class="album-card__genres">Rock, Agant-garde, Pop</span>                   
+                </div>
+                <div class="estimation">
+                    <div> User score:
+                        <ul class="album-card__estimation by_people">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                    <div> Critic score:
+                        <ul class="album-card__estimation by_critic">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                </div>                                   
+            </div>
+            <div class="album-card album-card_orientation-horizontal">
+                <div class="pos"></div>
+                <div class="album-card__container-image"><a href="" class="album-link"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></a></div>
+                <div class="album-card__information" >
+                    <h2 class="album-card__title">Album Title</h2>
+                    <span class="album-card__author">Artist</span>
+                    <span class="album-card__date">Jun 20 1970</span>
+                    <span class="album-card__genres">Rock, Agant-garde, Pop</span>                   
+                </div>
+                <div class="estimation">
+                    <div> User score:
+                        <ul class="album-card__estimation by_people">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                    <div> Critic score:
+                        <ul class="album-card__estimation by_critic">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                </div>                               
+            </div>
+            <div class="album-card album-card_orientation-horizontal">
+                <div class="pos"></div>
+                <div class="album-card__container-image"><a href="" class="album-link"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></a></div>
+                <div class="album-card__information" >
+                    <h2 class="album-card__title">Album Title</h2>
+                    <span class="album-card__author">Artist</span>
+                    <span class="album-card__date">Jun 20 1970</span>
+                    <span class="album-card__genres">Rock, Agant-garde, Pop</span>                   
+                </div>
+                <div class="estimation">
+                    <div> User score:
+                        <ul class="album-card__estimation by_people">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                    <div> Critic score:
+                        <ul class="album-card__estimation by_critic">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                </div>                                
+            </div>
+            <div class="album-card album-card_orientation-horizontal">
+                <div class="pos"></div>
+                <div class="album-card__container-image"><a href="" class="album-link"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></a></div>
+                <div class="album-card__information" >
+                    <h2 class="album-card__title">Album Title</h2>
+                    <span class="album-card__author">Artist</span>
+                    <span class="album-card__date">Jun 20 1970</span>
+                    <span class="album-card__genres">Rock, Agant-garde, Pop</span>                   
+                </div>
+                <div class="estimation">
+                    <div> User score:
+                        <ul class="album-card__estimation by_people">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                    <div> Critic score:
+                        <ul class="album-card__estimation by_critic">
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                        </ul>
+                    </div>
+                </div>                                 
+            </div>
+            
+        </div>
+        <form class="charts-setting" method="get">
+            <select name="type" id="charts-setting__type">
+                <option value="Top">Top</option>
+                <option value="Popular">Popular</option>
+                <option value="Exotic">Exotic</option>
+            </select>
+            <select name="format" id="charts-setting__format">
+                <option value="Albums">Albums</option>
+                <option value="Ep">Ep</option>
+                <option value="Mixtape">Mixtape</option>
+                <option value="Singles">Singles</option>
+            </select>
+            <div class="chart-block__genres">
+                <label for="charts-block__genres">Chosed-genres: </label>
+                <textarea id="charts-block__genres"></textarea>
+            </div>
+            <button type="submit" class="charts-setting__update">Update chart</button>
+        </form>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="arrow arrow-direction_up hidden"><a href="#header"></a></div>
+        <div class="important-info">
+
+            <div class="grid-elem">
+                <div class="important-info__box-about">
+                    <h2 class="important-info__box-title">Little about us</h2>
+                    <p class="important-info__text">
+                        <span class="font-weight_bolder">Sed posuere</span> consectetur  est at.
+                        Nulla vitae elit libero, a pharetra.
+                        Lorem ipsum <span class="font-weight_bolder">dolor sit</span> amet, conse ctetuer adipiscing elit.
+                    </p>
+                </div>
+                <div class="important-info__box-social">
+                    <h2 class="important-info__box-title">Sociallize with us</h2>
+                    <div class="social social_theme_black">
+                    <a href="http://facebook.com/" class="facebook"></a>
+                    <a href="http://twitter.com" class="twitter"></a>
+                    <a href="https://dribbble.com" class="drible"></a>
+                    <a href="https://digg.com" class="digg"></a>
+                    <a href="https://mail.google.com" class="mail"></a>
+                    </div>
+                </div>
+            </div>
+                <div class="important-info__box-archive">
+                    <h2 class="important-info__box-title">Our Archives</h2>
+                    <a href="#" class="important-info__data">March 2012      </a>
+                    <a href="#" class="important-info__data">February 2012   </a>
+                    <a href="#" class="important-info__data">January 2012    </a>
+                    <a href="#" class="important-info__data">December 2011   </a>
+                </div>
+                <div class="imortant-info__box-relevante">
+                    <h2 class="important-info__box-title">Popular Posts</h2>
+                    <div class="album-card album-card_theme_mini">
+                        <img src="media/images/albums/album-main-2.png" alt="1" class="album-card__cover">
+                        
+                        <div class="convert">
+                            <h2 class="album-card__title">Great Album</h2>
+                            <span class="album-card__comment">12 COMMENTS</span>
+                        </div>
+                    </div>
+                    <div class="album-card album-card_theme_mini">
+                        <img src="media/images/albums/album-main-3.png" alt="2" class="album-card__cover">
+                        
+                        <div class="convert">
+                            <h2 class="album-card__title">Great Album</h2>
+                            <span class="album-card__comment">12 COMMENTS</span>
+                        </div>
+                    </div>
+                </div>
+            <div class="grid-elem">
+                <div class="box-search">
+                    <h2 class="important-info__box-title">Search our Site</h2>
+                    <form class="search-form" action="#">
+                        <input type="search" class="search-input" placeholder="Enter Search ...">
+                        <!-- <button class="search-form__button">Search</button> -->
+                    </form>
+                </div>
+                <div class="box-tag">
+                    <h2 class="box-tag__box-title">Tag Cloud</h2>
+                    <a href="#" class="box-tag__tag">Audio CD</a>
+                    <a href="#" class="box-tag__tag">Video</a>
+                    <a href="#" class="box-tag__tag">Playlist</a>
+                    <a href="#" class="box-tag__tag">Avantgarde</a>
+                    <a href="#" class="box-tag__tag">Melancholic</a>
+                </div>
+            </div>
+        </div>
+
+
+    
+    </footer>
+    <div class="lover-info">
+        <ul class="lover-info__menu-list">
+            <li class="lover-info__element-list"><a href="index.html" class="lover-info__menu-link">Home</a></li>
+            <li class="lover-info__element-list"><a href="#" class="lover-info__menu-link">Portfolio</a></li>
+            <li class="lover-info__element-list"><a href="#" class="lover-info__menu-link">Sitemap</a></li>
+            <li class="lover-info__element-list"><a href="#" class="lover-info__menu-link">Contact</a></li>
+        </ul>
+        <p class="lover-info__copyright-block">Musica @2013 by PremiumCoding | All Rights Reserved</p>
+    </div>
+</body>
+</html>
