@@ -4,12 +4,15 @@
         
     }
     div[class*=bloks] {
+        width: 100%;
         @include tablet{
             height: map-get($map: $slider-img-size, $key:height );
         }
         img {
-            object-fit: cover;
+            object-fit: fill;
             display: block;
+            width: 100%;
+            height: map-get($map: $slider-img-size, $key:height );
         }
     }
     // .sideshow__bloks2 img{
@@ -18,7 +21,7 @@
     // }
     @include tablet-up
     {
-        .sideshow__bloks2 img
+        div.sideshow__bloks2 img
         {
             width: map-get($slider-img-size, width );       
         }

@@ -514,7 +514,7 @@ a, h1, h2, p {
   display: block;
 }
 @media (min-width: 1600px) {
-  .sideshow .sideshow__bloks2 img {
+  .sideshow div.sideshow__bloks2 img {
     width: 930px;
   }
 }
