@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../album-style.css">
+    <link rel="stylesheet" href="/static/css/album-style.min.css">
     <link rel="icon" type="image/x-icon" href="../../media/images/Favicon.ico">
     <title>M store</title>
 </head>
@@ -129,13 +129,11 @@
             </nav>
         </div>
     </header>
-
-
-     <section class="main">
+    <section class="main">
         <div class="album-page">
             <div class="album-page__header">
                 <div class="album-page__cover-container">
-                    <img src="https://kartinkin.net/uploads/posts/2022-12/1670585830_kartinkin-net-p-estetichnie-golubie-kartinki-vkontakte-8.jpg" alt="header" class="main__cover">
+                    <img src="http://www.slackware.com/~msimons/slackware/grfx/shared/SWquinn1.jpg" alt="header" class="main__cover slack">
                 </div>
                 <nav class="album-page__navigation">
                     <div><a href="" class="album-page__nav-lin active">Music</a></div>
@@ -143,57 +141,125 @@
                 </nav>
             </div>
 
-            <div class="album-page__main-container album-page__main-container_list-album">
-                
-                <div class="album-container">
-                    <a href="Awaken-the-hero.html" class="album-container__link">
-                        <div class="art"><img src="../../media/images/albums/album-main-2.png" alt=""></div>
-                        <p class="title">Awaken The Hero</p>
-                    </a>
-                </div>
-                <div class="album-container">
-                    <a href="Bad-dreams.html" class="album-container__link">
-                        <div class="art"><img src="../../media/images/albums/album-main-3.png" alt=""></div>
-                        <p class="title">Oh my Dear</p>
-                    </a>
-                </div>
-                <div class="album-container">
-                    <a href="Revenna.html" class="album-container__link">
-                        <div class="art"><img src="../../media/images/albums/album-main-5.png" alt=""></div>
-                        <p class="title">Ravenna</p>
-                    </a>
-                </div>
-                <div class="album-container">
-                    <a href="Caribou.html" class="album-container__link">
-                        <div class="art"><img src="../../media/images/albums/album-main-1-discount.png" alt=""></div>
-                        <p class="title">Caribou</p>
-                    </a>
-                </div>
-                <div class="album-container">
-                    <a href="Aqualung.html" class="album-container__link">
-                        <div class="art"><img src="../../media/images/albums/album-main-2-discount.png" alt=""></div>
-                        <p class="title">Aqualung</p>
-                    </a>
-                </div>
-                <div class="album-container">
-                    <a href="StrangetoEars.html" class="album-container__link">
-                        <div class="art"><img src="../../media/images/albums/album-main-3-discount.png" alt=""></div>
-                        <p class="title">Strange to ears</p>
-                    </a>
-                </div>
-                <div class="album-container">
-                    <a href="Back-from.html" class="album-container__link">
-                        <div class="art"><img src="../../media/images/albums/album-main-4-discount.png" alt=""></div>
-                        <p class="title">Ravenna</p>
-                    </a>
-                </div>
-                <div class="album-container">
-                    <a href="Oh-my-deer.html" class="album-container__link">
-                        <div class="art"><img src="../../media/images/albums/album-main-1.png" alt=""></div>
-                        <p class="title">Oh my Dear</p>
-                    </a>
+            <div class="album-page__main-container">
+                <div class="album-page__name-section">
+                    <h2 class="Title">Ravenna</h2>
+                    <h3 class="author">by <a href="_Artist.html">Artist</a></h3>
                 </div>
 
+                <div class="album-page__middle-col">
+                    <div class="album-page__cover">
+                        <a href="#" class="album-page__image"><img src="../../media/images/albums/album-main-5.png" alt="slack" ></a>
+                    </div>
+                    <div class="album-page__share-panel">
+                        <div class="share-control">
+                            <ul>
+                                <li class="share">
+                                    <span class="share__icon"></span>
+                                    <span class="share__label"><button class="share__button">Share</button></span>
+                                </li>
+                                <li class="wishlist">
+                                    <span class="wishlist__icon"></span>
+                                    <span class="wishlist__label"><a>Wishlist</a></span>
+                                </li>
+                                <li class="wishlisted">
+                                    <span class="wishlisted__icon"></span>
+                                    <span class="wishlist__label"><a>In wishlist</a></span>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                </div>
+
+                    <div class="album-page__information">
+                    
+                        <div class="album-page__play-container">
+                            <a class="album-page__play-button">
+                                <div class="play-button"></div>
+                            </a>
+                            <div class="album-page__play-container-track-info">
+                                <span class="title">Makko</span>
+                                <span class="time album-page__secondary-text">00:00/2:30</span>
+                            </div>
+                            <div class="album-page__progress-container">
+                                <progress value="0" max="100">0%</progress>
+                                <div class="draggable"></div>
+                            </div>
+                            <div class="album-page__prev-track">
+                                <a role="button">
+                                    <div class="prev-track-icon"></div>
+                                </a>
+                            </div>
+
+
+                            <div class="album-page__next-track">
+                                <a role="button">
+                                    <div class="next-track-icon"></div>
+                                </a>
+                            </div>
+                            
+                        </div>
+                        <div class="album-page__download-container">
+                            <h4>
+                                <button class="album-page__download-link" type="button">Buy Digital Album</button>
+                                <span class="album-page__secondary-text">name your price</span>
+                            </h4>
+                            <h4 class="album-page__gift-link"  onclick="giftDialog.showModal()">Send as gift</h4>
+                            <dialog id="giftDialog">
+                                <form method="dialog">
+                                    <div class="up-pannel">
+                                        <span class="gift-dialog-title">Gift - Digital Album</span>
+                                    <button class="close" onclick="giftDialog.close()">Close</button>
+                                    </div>
+                                    <fieldset>
+                                        <label for="gift-name__user-name">Your name: </label>
+                                            <input id="gift-name__user-name" type="text" value="unloged">
+                                    </fieldset>
+                                    <fieldset>
+                                        <label for="gift-recip__recip-name">Recipient’s name: </label>
+                                            <input id="gift-recip__recip-name" type="text" >
+                                    </fieldset>
+                                    <fieldset>
+                                        <label for="gift-recip__mail">Recipient’s email: </label>
+                                            <input id="gift-recip__mail" type="email" >
+                                    </fieldset>
+                                    <fieldset>
+                                        <label for="gift-recip__area">Personal message: </label>
+                                            <textarea id="gift-recip__area" name="message" ></textarea>
+                                    </fieldset>
+                                    <button type="submit" onclick="giftDialog.close()">Confirm</button>
+                                </form>
+                            </dialog>
+                        </div>
+
+                        <table class="table-song">
+                            <tr class="table-song__track-row">
+                                <td class="table-song__play-col"><a role="button" class="table-song-play-button"><div class="play-button"></div></a></td>
+                                <td class="table-song__track-number-col">1</td>
+                                <td class="table-song__title-col"><a href=""><span class="table-song__song-name">Makko</span></a>
+                                    <span class="table-song__time album-page__secondary-text">2:30</span></td>
+                                <td class="table-song__download-col">
+                                    <div class="table-song__download-link"></div>
+                                </td>
+                            </tr>
+                            <tr class="table-song__track-row">
+                                <td class="table-song__play-col"><a role="button" class="table-song-play-button"><div class="play-button"></div></a></td>
+                                <td class="table-song__track-number-col">2</td>
+                                <td class="table-song__title-col"><a href=""><span class="table-song__song-name">Datte</span></a>
+                                    <span class="table-song__time album-page__secondary-text">3:40</span></td>
+                                <td class="table-song__download-col">
+                                    <div class="table-song__download-link"></div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="album-page__text-about">test text about</div>
+                        <div class="credits">released March 10, 2020</div>
+                        <div class="license">&copy; all right reserved</div>
+
+                    </div>
          
             </div>
 
@@ -251,19 +317,16 @@
                     
                 </div>
             </div>
-        
+
+            <div class="album-page__tag-block">
+        <h3 class="Tag-label">Tag</h3>
+        <a href="" class="tag album-page__secondary-text">rock</a>
+        <a href="" class="tag album-page__secondary-text">house</a>
+        <a href="" class="tag album-page__secondary-text">techno</a>
+        <a href="" class="tag album-page__secondary-text">Moscow</a>
+            </div>
         </div>
-        <div class="album-page__tag-block">
-            <h3 class="Tag-label">Tag</h3>
-            <a href="" class="tag album-page__secondary-text">rock</a>
-            <a href="" class="tag album-page__secondary-text">house</a>
-            <a href="" class="tag album-page__secondary-text">techno</a>
-            <a href="" class="tag album-page__secondary-text">Moscow</a>
-        </div>
-        
     </section>
-
-
 
 
     <div class="lover-info">
