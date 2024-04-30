@@ -1,0 +1,39 @@
+.drop-down-menu{
+    position: absolute;
+    top: 44px;
+    left: -248px;
+    width: 348px;
+    opacity: 0;
+    display: none;
+    transition: opacity .5s;
+    z-index: 1;
+    animation: exist .3s ;
+    animation-play-state: paused;
+    background-color: $white;
+
+    // &:target{
+    //     opacity: 1;
+    //     display: block;
+    //     animation-play-state: running;
+    // }
+
+    &:hover{
+        opacity: 1;
+        display: block;
+    }
+    @keyframes exist {
+        0%{
+            display: block;
+            transform: translateY(2%);
+        }
+        100%{
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+    &::after{
+        content: '';
+        clear: both;
+        display: block;
+    }
+}

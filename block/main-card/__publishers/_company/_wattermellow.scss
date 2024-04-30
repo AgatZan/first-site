@@ -1,0 +1,22 @@
+@include bg-img(wattermellow);
+
+// /*.main-card__publisher-block:has(.main-card__publishers_company_wattermellow),*/ 
+.main-card__publisher-block:first-of-type
+{
+    flex-wrap: wrap;
+    &::after{
+    content: "WaterMelocious";
+        font-size: 16px;
+        font-family: "Trebuchet MS";
+        color: transparent;
+        line-height: 1.2;
+        background: linear-gradient(to right, #605d5d , #a1a0a0 42% );
+        background-clip: text;
+        -webkit-background-clip: text;
+        position: absolute;
+        display: inline;
+        bottom: 0px;
+        left: 53%;
+        transform: translateX(-50%);
+}
+}

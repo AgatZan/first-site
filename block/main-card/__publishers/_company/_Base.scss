@@ -1,0 +1,12 @@
+@mixin bg-img($target){
+    .main-card__publishers_company_#{$target}{
+        background: transparent no-repeat url("media/images/publishers/#{$target}.png") center center;
+        object-fit: cover;
+        // position: absolute;
+        z-index: 1;
+        transition: filter .1s;
+        &:hover, &::after{
+            filter:sepia(1);
+        }
+    }
+}

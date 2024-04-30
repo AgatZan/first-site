@@ -1,0 +1,12 @@
+.main-card__publisher-block{
+    background-image: -moz-linear-gradient(0deg, rgba(230,230,230,.502) 0%, rgba(255,255,255,.502) 100%);
+    background-image: -webkit-linear-gradient( 0deg, rgba(230,230,230,.502) 0%, rgba(255,255,255,.502) 100%);
+    background-image: -ms-linear-gradient( 0deg, rgba(230,230,230,.502) 0%, rgba(255,255,255,.502) 100%);
+    // filter: opacity(.502);
+    width: $publishers-img-w;
+    height: $publishers-img-h;
+    display: inline-flex;
+    white-space: nowrap;
+    margin: 26px -6px 0;
+    position: relative;
+}

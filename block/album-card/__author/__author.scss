@@ -1,0 +1,10 @@
+.album-card__author{
+    font-size: 14px;
+    font-style: italic;
+    &::before{
+        content:" by ";
+        margin-left: 13px;
+        display: inline-block;
+        margin: 0px 3px 0px 9px;
+    }
+}

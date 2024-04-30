@@ -1,0 +1,13 @@
+.album-card__user-score{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    width: 60%;
+
+    @include sDev-d{
+        .album-card__estimation{
+            margin: 10px 0;
+        }
+    }
+}

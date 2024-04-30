@@ -1,0 +1,72 @@
+//Device-first
+@mixin sDev-up{
+    @media (min-width:map-get( $media-size, sDevice)){
+        @content;
+    }
+}
+
+@mixin tablet-up{
+    @media (min-width:map-get( $media-size, tablet)){
+        @content;
+    }
+}
+
+@mixin Comp-up{
+    @media (min-width:map-get( $media-size, Comp)){
+        @content;
+    }
+}
+
+@mixin sDev{
+    @media ( (max-width: map-get( $media-size, tablet)) and (min-width:map-get( $media-size, sDevice))) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media ((max-width: map-get( $media-size, Comp) ) and (min-width:map-get( $media-size, tablet)  )) {
+        @content;
+    }
+}
+
+@mixin Comp{
+    @media (min-width:map-get( $media-size, Comp)) {
+        @content;
+    }
+}
+//Mobile-first
+
+
+@mixin tablet-down{
+    @media (max-width:map-get( $media-size, Comp)){
+        @content;
+    }
+}
+
+@mixin sDev-down{
+    @media (max-width: (map-get( $media-size, tablet) - 1px) ){
+        @content;
+    }
+}
+@mixin sDev-d{
+    @media (max-width:map-get( $media-size, sDevice ) ){
+        @content;
+    }
+}
+@mixin sDev{
+    @media ( (max-width: map-get( $media-size, tablet)) and (min-width:map-get( $media-size, sDevice))) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media ((max-width: map-get( $media-size, Comp)) and (min-width:map-get( $media-size, tablet))) {
+        @content;
+    }
+}
+
+@mixin Comp{
+    @media (min-width:map-get( $media-size, Comp)) {
+        @content;
+    }
+}

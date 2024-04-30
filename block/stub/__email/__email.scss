@@ -1,0 +1,21 @@
+.page-stub__email{
+position: absolute;
+font-family: $main-font;
+display: block;
+width: 60%;
+line-height: 20px;
+background-color: $white;
+padding-left: 2%;
+    border: 2px solid;
+font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+        input{
+            border: 2px solid;
+            margin: 1% 0;         
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+        }
+
+}
