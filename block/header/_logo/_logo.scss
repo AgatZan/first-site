@@ -1,0 +1,20 @@
+.header__logo{
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    .header__logo-image{
+        display: block;
+        width: $logo-size;
+        height: $logo-size;
+    }
+    .header__logo-decore{
+        position: absolute;
+        left: 15px;
+        color: $white;
+        font-size: 36px;
+    }
+    .header__logo-title{
+        font-size: 30px;
+        margin-left:4px;
+    }
+}

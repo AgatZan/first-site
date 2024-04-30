@@ -1,0 +1,29 @@
+.social_theme_black{
+    .facebook{
+        background:no-repeat center center url('media/images/social_black/facebook.png');
+        
+    }
+    .drible{
+        background:no-repeat center center url('media/images/social_black/dribbble.png');
+    }
+    .twitter{
+        background:no-repeat center center url('media/images/social_black/twitter.png');
+    }
+    .mail{
+        background:no-repeat center center url('media/images/social_black/mail.png');
+    }
+    
+    .digg{
+        background: no-repeat url('media/images/digg-logo.png') center center;
+    }
+    a::after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: $social-size;
+    height: $social-size;
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        opacity: 0.078;
+    }
+}

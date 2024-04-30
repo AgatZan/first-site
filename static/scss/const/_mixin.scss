@@ -1,0 +1,31 @@
+@mixin dotted
+{
+        
+            &::before{
+                content: '';
+                box-sizing: border-box;
+                width: 960px;
+                height: 7px;
+                position: absolute;
+                left: -46px;
+                top: -3px;
+                background: repeat-x url('../../media/images/quote_border.png') center/960px 1px,
+                repeat-x url('../../media/images/quote_border.png') center 0/960px 1px,
+                repeat-x url('../../media/images/quote_border.png') center 6px/960px 1px;
+                z-index: -3;
+            }
+            &::after{
+                content: '';
+                box-sizing: border-box;
+                width: 960px;
+                height: 7px;
+                position: absolute;
+                left: 0;
+                top:100%;
+                background: repeat-x url('../../media/images/quote_border.png') center /960px 1px,
+                repeat-x url('../../media/images/quote_border.png') center 0/960px 1px,
+                repeat-x url('../../media/images/quote_border.png') center 6px/960px 1px;
+                z-index: -3;
+            }
+        
+}

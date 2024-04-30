@@ -1,0 +1,13 @@
+@mixin before-image($url-string, $width, $height){
+    &::before{
+        content:'';
+        display: inline-block;
+        position: absolute;
+        width: $width;
+        height: $height;
+        left: 20px;
+        background: url($url-string);
+        object-fit: cover;
+        
+    }
+}

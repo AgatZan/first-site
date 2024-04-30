@@ -1,0 +1,40 @@
+
+.basket__goods{
+
+    background-color: $red;
+    height: 100%;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   
+    & p::before{
+        background-image: url(media/images/basket.png);
+        content: ' ';
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        background-size: 40px 40px;
+        filter:brightness(0) invert(1);
+        padding: 6px 0px 0px 0px;
+    }
+   & p{
+        display: inline-flex;
+        align-items: center;
+        margin: 0px 0px -8px -12px;
+    }
+    & p::after{
+        content: ' (2)';
+        padding-left: 4px;
+    }
+    &:hover~.drop-down-menu{
+         opacity: 1;
+        display: block;
+        animation-play-state: running;
+    }
+    // &:active~.drop-down-menu{
+    //     // opacity: 1;
+    //     display: block;
+    //     animation-play-state: running;
+    // }
+}

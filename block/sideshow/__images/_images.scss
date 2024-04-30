@@ -1,0 +1,6 @@
+.sideshow__images {
+    object-fit: fill;
+    display: block;
+    width: 100%;
+    height: map-get($map: $slider-img-size, $key:height );
+}

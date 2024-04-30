@@ -1,0 +1,24 @@
+.navigation{
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    grid-column: 9;
+    align-items: center;
+    margin-right:200px ;
+    padding-top: 10px;
+    gap: 34px;
+    height: 96px;
+    .navigation__elements{
+        margin-left: -4px;
+        a{
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            transition: font-size .1s ease-out;
+            &:hover{
+                font-style: italic;   
+                font-size: 16px;
+            }
+        }
+    }
+}
