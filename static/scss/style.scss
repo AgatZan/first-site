@@ -2,17 +2,22 @@
 @import 'const/resets' ;
 @import 'const/breakpoint' ;
 @import 'const/font' ;
+
     @import '../../block/border/doted';
     @import '../../block/styled-text/red-board';
     @import '../../block/styled-text/grey-border';
     @import '../../block/styled-text/font-weight_bold';
     @import '../../block/styled-text/font-weight_bolder';
     @import '../../block/mixin/icon-mixin';
+
+// HEADER
     @import '../../block/header/_header.scss';
+
+    // TOP-panel
             @import '../../block/top-panel/top-panel';
                 @import '../../block/social/social';
                         @import "../../block/social/_theme/black";
-
+    // REGISTRATION
                 @import '../../block/registraitin-panel/registration-panel';
                     @import '../../block/registraitin-panel/__login/login';
                     @import '../../block/registraitin-panel/__registration/_registration.scss';
@@ -30,16 +35,23 @@
                     @import '../../block/drop-down-menu/__checkout/_checkout';
 
 
-
-
-
             @import '../../block/sub-panel/sub-panel';    
                 
                 @import '../../block/header/_logo/logo';
                 @import '../../block/navigation/navigation';
+
+        // SIDESHOW
         @import '../../block/sideshow/sideshow';
-                @import '../../block/sideshow/_bloks/sideshow-bloks';
-                @import '../../block/sideshow/_text/text';
+                @import '../../block/sideshow/__bloks/sideshow-block';
+                    @import '../../block/sideshow/__block/_position/center';
+                @import '../../block/sideshow/__text/text';
+                @import '../../block/sideshow/__images/images';
+                    @import '../../block/sideshow/__images/_position/center';
+                @import '../../block/sideshow/__mover/mover';
+                    @import '../../block/sideshow/__mover/_theme/circle';
+                    @import '../../block/sideshow/__mover/_background/arrow-left';
+                    @import '../../block/sideshow/__mover/_background/arrow-right';
+
 
         @import '../../block/quote/quote';
     
