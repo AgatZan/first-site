@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/css/style.min.css">
+    <link rel="stylesheet" href="static/css/style.min.css">
     <link rel="icon" type="image/x-icon" href="media/images/Favicon.ico">
     <title>M store</title>
 </head>
@@ -64,43 +64,45 @@
                         <p>Cart</p>
                     </a>                     
                      <div id="drop-down" class="drop-down-menu">
-                        <div class="album-card album-card_orientation-horizontal">
-                            <div class="album-card__container-image"><img src="media/images/albums/album-main-1-discount.png" alt="first" class="album-card__cover"></div>
-                            <div class="album-card__information">
-                                <h2 class="album-card__title">Album Title</h2>
-                                <span class="album-card__author">Artist</span>
-                                <ul class="album-card__estimation">
-                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                    <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                                </ul>                                   
+                        <div class="basket__albums">
+                            <div class="album-card album-card_orientation_horizontal">
+                                <div class="album-card__container-image"><img src="media/images/albums/album-main-1-discount.png" alt="first" class="album-card__cover"></div>
+                                <div class="album-card__information">
+                                    <h2 class="album-card__title">Album Title</h2>
+                                    <span class="album-card__author">Artist</span>
+                                    <ul class="album-card__estimation">
+                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                        <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                                    </ul>                                   
+                                </div>
+                           
+                                <div class="album-card__price">
+                                    <span class="album-card__price-value album-card__price_price-type_dollar">14.99</span>
+                                    <div class="album-card__delete">x</div>
+                                </div>
                             </div>
-                       
-                            <div class="album-card__price">
-                                <span class="album-card__price-value album-card__price_price-type_dollar">14.99</span>
-                                <div class="albim-card__delete">x</div>
-                            </div>
-                        </div>
-                        <div class="album-card album-card_orientation-horizontal">
-                            <div class="album-card__container-image"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></div>
-                            <div class="album-card__information" >
-                                <h2 class="album-card__title">Album Title</h2>
-                                <span class="album-card__author">Artist</span>
-                                <ul class="album-card__estimation">
-                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                    <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                    <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                                </ul>
-                                                               
-                            </div>
-                       
-                            <div class="album-card__price">
-                                <span class="album-card__price-value album-card__price_price-type_dollar">27.59</span>
-                                <div class="albim-card__delete">x</div>
+                            <div class="album-card album-card_orientation_horizontal">
+                                <div class="album-card__container-image"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></div>
+                                <div class="album-card__information" >
+                                    <h2 class="album-card__title">Album Title</h2>
+                                    <span class="album-card__author">Artist</span>
+                                    <ul class="album-card__estimation">
+                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
+                                        <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
+                                    </ul>
+                                                                   
+                                </div>
+                           
+                                <div class="album-card__price">
+                                    <span class="album-card__price-value album-card__price_price-type_dollar">27.59</span>
+                                    <div class="album-card__delete">x</div>
+                                </div>
                             </div>
                         </div>
                         <div class="drop-down-menu__total-price">
@@ -133,16 +135,21 @@
 
 
         <div class="sideshow">
-            <div class="sideshow__block">
+            <div class="sideshow__placeholder sideshow__placeholder_left">
                 <div class="sideshow__mover sideshow__mover_theme_circle sideshow__mover_background_arrow-left"></div>
+            </div>
+            <div class="sideshow__placeholder sideshow__placeholder_center"></div>
+            <div class="sideshow__placeholder sideshow__placeholder_right">
+                <div class="sideshow__mover sideshow__mover_theme_circle sideshow__mover_background_arrow-right"></div>
+            </div>
+            <div class="sideshow__block sideshow__block_position_left">
                 <img src="media/images/image1-slide.png" alt="img1" class="sideshow__images">
             </div>
             <div class="sideshow__block sideshow__block_position_center">
-                <img src="media/images/image2-slide.png" alt="img2" class="sideshow__images">
+                <img src="media/images/image2-slide.png" alt="img2" class="sideshow__images sideshow__images_position_center">
                 <div class="sideshow__text">MUSIC EVENT WITH DJ STARTING AT 20.00 ON AUGUST 15TH</div>
             </div>
-            <div class="sideshow__block">
-                <div class="sideshow__mover sideshow__mover_theme_circle sideshow__mover_background_arrow-right"></div>
+            <div class="sideshow__block sideshow__block_position_right">
                 <img src="media/images/image3-slide.png" alt="img3" class="sideshow__images">
             </div>
         </div>
