@@ -1,0 +1,29 @@
+/album
+    get
+        model album
+        method select
+    post
+        model album
+        params album_name,album_type,album_release_date
+        method insert
+
+/album/{id}
+    get
+        model album
+        method select {id}
+    put
+        model album
+        params album_name,album_type,album_release_date
+        method update
+/news
+    get
+        model news
+        method select
+    post
+        model news
+        params news_path,news_cover_path,news_text
+        method insert
+/news/{id}
+    get
+        model news
+        method select {id}

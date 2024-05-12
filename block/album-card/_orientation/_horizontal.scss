@@ -1,4 +1,4 @@
-.album-card_orientation-horizontal{
+.album-card_orientation_horizontal{
     width: 100%;
     display: inline-block;
     color: $dark-grey;
@@ -12,7 +12,7 @@
         display: block;
         width: 99%;
         border: 1px solid transparent;
-        border-image: url('media/images/quote_border.png') 1 300/ 1px;
+        border-image: url('/media/images/quote_border.png') 1 300/ 1px;
     }
     .album-card__container-image{
         display: inline-block;
@@ -68,7 +68,7 @@
            
     }
 
-    .albim-card__delete{
+    .album-card__delete{
         display: block;
         content: "x";
         font-size: 14px;

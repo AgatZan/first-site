@@ -216,7 +216,7 @@ flex-wrap: wrap;
                 transform: translate(-50%,-50%);
                border-radius: 3px;
                .album-card__cover_special::after {
-                background: no-repeat url('media/images/albums/album-main-4.png') 30% 30%/60%;
+                background: no-repeat url('/media/images/albums/album-main-4.png') 30% 30%/60%;
                 filter: brightness(1);
                 position: absolute;
                 content: "";

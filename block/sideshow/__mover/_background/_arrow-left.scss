@@ -1,3 +1,6 @@
 .sideshow__mover_background_arrow-left{
-    background: url('media/images/sideshow-arrow_left.png') no-repeat center center, rgba(0, 0, 0,.3);
+    background-color: rgba(0,0,0, .3);
+    background-image:  url('/media/images/sideshow_arrow-left.png');
+    background-position: center center;
+    background-repeat: no-repeat;
 }

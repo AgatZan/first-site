@@ -1,0 +1,6 @@
+.sideshow__placeholder{
+    position: relative;
+    &:hover .sideshow__mover{
+        opacity: (.3);
+    }
+}

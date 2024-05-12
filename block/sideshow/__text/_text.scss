@@ -4,14 +4,14 @@
     color: $white;
     height: $sideshow_text-height;
     width: 100%;
-    top:23.5vw;
-    @include sDev-down
-        { 
-            top:map-get($slider-img-size, height )-$sideshow_text-height;
-        }
+    top:89%;//23.5vw;
+    // @include sDev-down
+    //     { 
+    //         top:map-get($slider-img-size, height )-$sideshow_text-height;
+    //     }
     padding: 3px 17px;
     background-color: rgba($red,.8);
     font-family: $h-font;
-    font-size:23px;
+    font-size:150%;//23px;
     word-spacing: -1.5px;
 }

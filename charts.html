@@ -377,13 +377,13 @@
             </div>
             
         </div>
-        <form class="charts-setting" method="get">
-            <select name="type" id="charts-setting__type">
+        <form class="charts-setting" method="get" action="/api/songs">
+            <select name="type" class="charts-setting__type">
                 <option value="Top">Top</option>
                 <option value="Popular">Popular</option>
                 <option value="Exotic">Exotic</option>
             </select>
-            <select name="format" id="charts-setting__format">
+            <select name="format" class="charts-setting__format">
                 <option value="Albums">Albums</option>
                 <option value="Ep">Ep</option>
                 <option value="Mixtape">Mixtape</option>
@@ -391,7 +391,7 @@
             </select>
             <div class="chart-block__genres">
                 <label for="charts-block__genres">Chosed-genres: </label>
-                <textarea id="charts-block__genres"></textarea>
+                <textarea name="charts-block__genres" class="charts-block__genres"></textarea>
             </div>
             <button type="submit" class="charts-setting__update">Update chart</button>
         </form>

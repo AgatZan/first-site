@@ -9,7 +9,7 @@
     width: 160px;
     letter-spacing: -0.2px;
     &::after{
-        content: url("media/images/drop-down-arrow.png");
+        content: url("/media/images/drop-down-arrow.png");
         padding: 0 0 4px 8px;
     }
     &:hover{

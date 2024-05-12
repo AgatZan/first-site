@@ -1,0 +1,3 @@
+song_id PRIMARY
+song_name
+album_id album album_id

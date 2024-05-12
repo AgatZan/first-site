@@ -1,0 +1,3 @@
+user_id PRIMARY
+user_name
+user_password

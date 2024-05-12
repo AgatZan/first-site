@@ -42,8 +42,15 @@
 
         // SIDESHOW
         @import '../../block/sideshow/sideshow';
-                @import '../../block/sideshow/__bloks/sideshow-block';
+                @import '../../block/sideshow/__placeholder/placeholder';
+                    @import '../../block/sideshow/__placeholder/placeholder';
+                        @import '../../block/sideshow/__placeholder/center';
+                        @import '../../block/sideshow/__placeholder/left';
+                        @import '../../block/sideshow/__placeholder/right';
+                @import '../../block/sideshow/__block/block';
                     @import '../../block/sideshow/__block/_position/center';
+                    @import '../../block/sideshow/__block/_position/left';
+                    @import '../../block/sideshow/__block/_position/right';
                 @import '../../block/sideshow/__text/text';
                 @import '../../block/sideshow/__images/images';
                     @import '../../block/sideshow/__images/_position/center';
@@ -174,5 +181,5 @@
     }
 body{
     font-family: $main-font;
-    background-image: url('media/images/background\ copy.png');
+    background-image: url('/media/images/background\ copy.png');
 }

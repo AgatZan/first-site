@@ -1,3 +1,6 @@
-.sideshow__mover_background_arrow-left{
-    background: url('media/images/sideshow-arrow_right.png') no-repeat center center, rgba(0, 0, 0,.3);
+.sideshow__mover_background_arrow-right{
+    background-color: rgba(0,0,0, .3);
+    background-image:  url('/media/images/sideshow_arrow-right.png');
+    background-position: center center;
+    background-repeat: no-repeat;
 }

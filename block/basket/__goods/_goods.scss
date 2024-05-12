@@ -8,7 +8,7 @@
    align-items: center;
    
     & p::before{
-        background-image: url(media/images/basket.png);
+        background-image: url(/media/images/basket.png);
         content: ' ';
         display: inline-block;
         width: 40px;
@@ -24,7 +24,7 @@
         margin: 0px 0px -8px -12px;
     }
     & p::after{
-        content: ' (2)';
+        content: var(--basket-count);
         padding-left: 4px;
     }
     &:hover~.drop-down-menu{

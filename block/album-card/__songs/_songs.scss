@@ -1,0 +1,9 @@
+.album-card__songs{
+    background-color: rgba(19, 19, 19, 0.26);
+    opacity: 0;
+    position: absolute;
+    transition: opacity .3s ease-in;
+    &:hover{
+        opacity: 1;
+    }
+}

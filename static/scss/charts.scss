@@ -80,7 +80,7 @@
                                 @import "../../block/album-card/__title/_title";
 
                                 @import "../../block/album-card/__author/_author";
-
+                    @import '../../block/charts-block/charts-block';
                     @import '../../block/charts-setting/charts-setting';
                             @import '../../block/charts-setting/__type/_type';
                             @import '../../block/charts-setting/__format/_format';
@@ -109,7 +109,7 @@
                             }
                         body{
                             font-family: $main-font;
-                            background-image: url('media/images/background\ copy.png');
+                            background-image: url('/media/images/background\ copy.png');
                         }
                         @include sDev-d{
 

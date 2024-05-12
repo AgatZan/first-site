@@ -6,6 +6,7 @@
     border: solid $slider-border-size  $dark-grey;
     border-left: none;
     border-right: none;
+    height: 60vmin;
 &::after{
     clear: both;
     content: '';

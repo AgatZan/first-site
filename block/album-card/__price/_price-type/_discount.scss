@@ -1,4 +1,5 @@
 .album-card__price_price-type_discount{
+    --discount-price:'$8.99';
     text-decoration: line-through;
     display: inline-block;
     margin: 0px 0px 0px -9px;
@@ -8,12 +9,11 @@
         margin: 0px -2px 0px 7px;
     }
     &::after{
-        content: "$8.99";
+        content: var(--discount-price);
         display: inline-block;
         margin-left: 4px;
         color: #fdfdfd;
         background-color: #c33;
-        width: 41px;
         height: 16px;
         font-size: 16px;
         

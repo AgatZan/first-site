@@ -1,0 +1,4 @@
+news_id PRIMARY
+news_path
+news_cover_path
+news_text

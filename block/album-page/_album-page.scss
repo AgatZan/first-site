@@ -9,7 +9,7 @@
 
 body, .album-page{
     font-family: $main-font;
-    background-image: url('media/images/background\ copy.png');
+    background-image: url('/media/images/background\ copy.png');
 }
 .album-page{
     width: 915px;
@@ -147,7 +147,7 @@ body, .album-page{
                         }
 
                         .share__icon{
-                            background: no-repeat url('media/images/share-icon.png') 0px 0px/20px 20px;
+                            background: no-repeat url('/media/images/share-icon.png') 0px 0px/20px 20px;
                             height: 20px;
                             width: 20px;
                             display: inline-block; 
@@ -174,7 +174,7 @@ body, .album-page{
                         .wishlist{
                             
                             .wishlist__icon{
-                            background: no-repeat url('media/images/wishlist-icon.png') 0px 0px/20px 20px;
+                            background: no-repeat url('/media/images/wishlist-icon.png') 0px 0px/20px 20px;
                             height: 20px;
                             width: 20px;
                             display: inline-block; 
@@ -205,7 +205,7 @@ body, .album-page{
                         .wishlisted{
                             display: none;
                             .wishlisted__icon{
-                                background: no-repeat url('media/images/wishlisted-icon.png') 0px 0px/20px 20px;
+                                background: no-repeat url('/media/images/wishlisted-icon.png') 0px 0px/20px 20px;
                                 height: 20px;
                                 width: 20px;
                                 display: inline-block; 
@@ -343,7 +343,7 @@ body, .album-page{
                         display: block;
                         .prev-track-icon
                         {
-                            background: black url('media/images/arrow-left.png') no-repeat 0 0;
+                            background: black url('/media/images/arrow-left.png') no-repeat 0 0;
                             background-size: 20px 12px;
                             cursor: pointer;
                             width: 20px;
@@ -365,7 +365,7 @@ body, .album-page{
                         display: block;
                         .next-track-icon
                         {
-                            background: black url('media/images/arrow-right.png') no-repeat 0 0;
+                            background: black url('/media/images/arrow-right.png') no-repeat 0 0;
                             background-size: 20px 12px;
                             cursor: pointer;
                             width: 20px;

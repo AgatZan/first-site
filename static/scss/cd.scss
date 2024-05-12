@@ -37,9 +37,9 @@
                 
                 @import '../../block/header/_logo/logo';
                 @import '../../block/navigation/navigation';
-        @import '../../block/sideshow/sideshow';
-                @import '../../block/sideshow/_bloks/sideshow-bloks';
-                @import '../../block/sideshow/_text/text';
+        // @import '../../block/sideshow/sideshow';
+        //         @import '../../block/sideshow/_bloks/sideshow-bloks';
+        //         @import '../../block/sideshow/_text/text';
 
         @import '../../block/quote/quote';
     
@@ -159,5 +159,5 @@
     }
 body{
     font-family: $main-font;
-    background-image: url('media/images/background\ copy.png');
+    background-image: url('/media/images/background\ copy.png');
 }
