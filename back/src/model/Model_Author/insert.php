@@ -1,12 +1,13 @@
 <?php
 namespace Model_Author;
 
-
 function insert(\PDO $con
 	, $author_name
+	, $author_page
 ):\Either{
     $obj = [
         'author_name' => $author_name
+		, 'author_page' => $author_page
     ];
     $obj = array_filter($obj);
     return insert_dto($con, $obj);

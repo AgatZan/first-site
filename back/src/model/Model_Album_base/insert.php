@@ -1,26 +1,25 @@
 <?php
 namespace Model_Album_base;
-
-require_rel(__DIR__,'../Model_Author/check');
+require_once realpath(__DIR__ . '/../Model_Author/check');
 
 
 function insert(\PDO $con
 	, $album_name
-	, $album_type $album_creator
-	,
+	, $album_type
+	, $author_id
 	, $album_release_date = NULL
 ):\Either{
     $obj = [
         'album_name' => $album_name
 		, 'album_type' => $album_type
-		, 'album_creator' => $album_creator
+		, 'author_id' => $author_id
 		, 'album_release_date' => $album_release_date
     ];
     $obj = array_filter($obj);
     return insert_dto($con, $obj);
 }
 function insert_dto(\PDO $con, $obj):\Either{ 
-    if(! \Model_Author\check_album_creator($con, $obj['album_creator']) )
+    if(! \Model_Author\check_author_id($con, $obj['author_id']) )
 		return ['status'=>ID_ERROR];
 	$set = '';
     $inset = '';

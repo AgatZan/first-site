@@ -1,14 +1,13 @@
 <?php
 namespace Model_Collection_albums;
+require_once realpath(__DIR__ . '/../Model_Collection/check');
 
-require_rel(__DIR__,'../Model_Collection/check');
-
-require_rel(__DIR__,'../Model_Album/check');
+require_once realpath(__DIR__ . '/../Model_Album/check');
 
 
-function insert(\PDO $con $collection_id
+function insert(\PDO $con
+	, $collection_id
 	, $album_id
-	,
 ):\Either{
     $obj = [
         'collection_id' => $collection_id

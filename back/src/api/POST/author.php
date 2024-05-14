@@ -1,5 +1,7 @@
 <?php
-require_once MODEL . 'Model_User/insert.php';
+require_once MODEL . 'Model_Author/insert.php';
+require_once MODEL . 'Model_Author/addons.php';
+require_once MODEL . 'Model_Album/select.php';
 header('Content-Type: application/json; charset=utf-8');
 require_once UTILS . 'serialize.php';
 require_once DB_CONNECT;
@@ -11,12 +13,17 @@ function get($key){
     }
     return $_POST[$key];
 }
+
 CON->beginTransaction();
-either_catch(\Model_User\insert(
+either_catch(\Model_Author\insert(
     CON
-    , get('user_name')
-    , password_hash(get('user_password'), PASSWORD_BCRYPT)
+    , get('author_name')
+    , get('author_page')
 ));
+$page_name = "../../../../static/". $_POST['author_page'];
+\Model_Author\addon_create_hp(
+    $_POST['author_name']
+    , $page_name
+);
 CON->commit();
-$_SESSION['user_name'] = $_POST['user_name'];
 return json_encode(['err'=>null]);

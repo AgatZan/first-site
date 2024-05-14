@@ -1,7 +1,6 @@
 <?php
 namespace Model_Album;
 
-
 function insert(\PDO $con
 	, $album_name
 	, $estimation

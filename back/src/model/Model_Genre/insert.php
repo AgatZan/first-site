@@ -1,7 +1,6 @@
 <?php
 namespace Model_Genre;
 
-
 function insert(\PDO $con
 	, $genre_name
 ):\Either{

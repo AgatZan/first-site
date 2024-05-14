@@ -17,7 +17,7 @@ function select($con, $from, $count=1000){
     return  !$st? new \Err(ID_ERROR) : new \Ok($st->fetchAll(\PDO::FETCH_ASSOC));
 }
 function select_id($con, $id){
-    $qu = $con->prepare("SELECT * FROM `song_genre` WHERE `song_id`=? AND `genre_id`=?");
+    $qu = $con->prepare("SELECT * FROM `song_genre` WHERE `song_id`=?`song_id`=? AND `genre_id`=?");
     $st = $con->execute($id);
     return  !$st? new \Err(ID_ERROR) : new \Ok($st->fetchAll(\PDO::FETCH_ASSOC));
 }

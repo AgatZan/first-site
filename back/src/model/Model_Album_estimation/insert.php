@@ -1,11 +1,10 @@
 <?php
 namespace Model_Album_estimation;
+require_once realpath(__DIR__ . '/../Model_Album/check');
 
-require_rel(__DIR__,'../Model_Album/check');
 
-
-function insert(\PDO $con $album_id
-	,
+function insert(\PDO $con
+	, $album_id
 	, $estimation
 ):\Either{
     $obj = [

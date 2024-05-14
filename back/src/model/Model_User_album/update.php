@@ -1,13 +1,13 @@
 <?php
-namespace Model_Song_genre;
+namespace Model_User_album;
 
 function update( \PDO $con
-	, $song_id
-	, $genre_id
+	, $user_name
+	, $album_id
 ):\Either{
     $obj =[
-        'song_id' => $song_id
-		, 'genre_id' => $genre_id
+        'user_name' => $user_name
+		, 'album_id' => $album_id
 		,
     ];
     $obj = array_filter($obj);
@@ -18,7 +18,7 @@ function update_dto(\PDO $con, $obj):\Either{
     foreach($obj as $key=>$val)
         $set .= "`$key`=:$key,";
     $set = substr($set, 0, -1);
-    $qu = $con->prepare("UPDATE `song_genre` SET $set WHERE `song_id` = :song_id, `genre_id` = :genre_id");
+    $qu = $con->prepare("UPDATE `user_album` SET $set WHERE `user_name` = :user_name, `album_id` = :album_id");
     $st = $qu->execute($obj);
     return !$st? new \Err(PASS_LOG_ERROR) : new \Ok('');
 }

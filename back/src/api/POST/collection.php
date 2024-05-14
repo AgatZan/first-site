@@ -1,5 +1,6 @@
 <?php
-require_once MODEL . 'Model_User/insert.php';
+require_once MODEL . 'Model_Collection/insert.php';
+require_once MODEL . 'Model_Collection_album/insert.php';
 header('Content-Type: application/json; charset=utf-8');
 require_once UTILS . 'serialize.php';
 require_once DB_CONNECT;
@@ -12,11 +13,11 @@ function get($key){
     return $_POST[$key];
 }
 CON->beginTransaction();
-either_catch(\Model_User\insert(
+either_catch(\Model_Collection\insert(
     CON
-    , get('user_name')
-    , password_hash(get('user_password'), PASSWORD_BCRYPT)
+    , get('collection_title')
 ));
+$id = CON->lastInsertId();
+either_catch(\Model_Collection_albums\insert(CON, $id, get('album_id')));
 CON->commit();
-$_SESSION['user_name'] = $_POST['user_name'];
 return json_encode(['err'=>null]);

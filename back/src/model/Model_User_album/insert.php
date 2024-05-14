@@ -1,21 +1,25 @@
 <?php
-namespace Model_Song;
+namespace Model_User_album;
+require_once realpath(__DIR__ . '/../Model_User/check');
+
 require_once realpath(__DIR__ . '/../Model_Album/check');
 
 
 function insert(\PDO $con
-	, $song_name
+	, $user_name
 	, $album_id
 ):\Either{
     $obj = [
-        'song_name' => $song_name
+        'user_name' => $user_name
 		, 'album_id' => $album_id
     ];
     $obj = array_filter($obj);
     return insert_dto($con, $obj);
 }
 function insert_dto(\PDO $con, $obj):\Either{ 
-    if(! \Model_Album\check_album_id($con, $obj['album_id']) )
+    if(! \Model_User\check_user_name($con, $obj['user_name']) )
+		return ['status'=>ID_ERROR];
+	if(! \Model_Album\check_album_id($con, $obj['album_id']) )
 		return ['status'=>ID_ERROR];
 	$set = '';
     $inset = '';

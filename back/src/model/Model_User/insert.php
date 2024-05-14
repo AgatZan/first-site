@@ -1,14 +1,11 @@
 <?php
 namespace Model_User;
 
-
 function insert(\PDO $con
-	, $user_name
 	, $user_password
 ):\Either{
     $obj = [
-        'user_name' => $user_name
-		, 'user_password' => $user_password
+        'user_password' => $user_password
     ];
     $obj = array_filter($obj);
     return insert_dto($con, $obj);

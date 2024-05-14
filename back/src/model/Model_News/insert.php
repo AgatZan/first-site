@@ -1,7 +1,6 @@
 <?php
 namespace Model_News;
 
-
 function insert(\PDO $con
 	, $news_path
 	, $news_cover_path

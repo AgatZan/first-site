@@ -1,12 +1,13 @@
-album_id PRIMARY
-album_name
-album_release_date DEFAULT+UPDATE
-estimation
-album_genre_id
-album_genre_name
-author_id
-author_name
-song_id
-song_name
-song_genre_id
-song_genre_name
+album__id PRIMARY
+album__name
+album__release_date DEFAULT+UPDATE
+album__cover
+album__estimation
+album__genre__id
+album__genre__name
+author__id
+author__name
+song__id
+song__name
+song__genre__id
+song__genre__name

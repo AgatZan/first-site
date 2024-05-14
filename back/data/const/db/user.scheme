@@ -1,3 +1,2 @@
-user_id PRIMARY
-user_name
+user_name PRIMARY
 user_password

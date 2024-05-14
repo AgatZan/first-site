@@ -28,8 +28,7 @@ function select_id($con, $id){{
 }}
 """
 INSERT_TEMP = """<?php
-namespace Model_{Table};
-{foreign_req}
+namespace Model_{Table};{foreign_req}
 
 function insert(\\PDO $con{insert_param}
 ):\\Either{{
@@ -125,11 +124,11 @@ def parce_scheme(filename):
                 case [field, args]:
                     match args:
                         case 'PRIMARY':
-                            obj['param_id'] = f"\n\t, ${field}"
-                            obj['where_id'] = f"`{field}` = :{field}, "
-                            obj['update_id'] = f" '{field}' => ${field}\n\t\t,"
-                            obj['delete_id'] = f"'{field}' => ${field}, "
-                            obj['select_id'] = obj.get('select_id') + f"AND `{field}`=?" if obj.get('select_id') else f"`{field}`=?"
+                            obj['param_id'] += f"\n\t, ${field}"
+                            obj['where_id'] += f"`{field}` = :{field}, "
+                            obj['update_id'] += f" '{field}' => ${field}\n\t\t,"
+                            obj['delete_id'] += f"'{field}' => ${field}, "
+                            obj['select_id'] += obj.get('select_id') + f"AND `{field}`=?" if obj.get('select_id') else f"`{field}`=?"
                         case w if w in ['DEFAULT', 'DEFAULT+UPDATE']:
                             insert_pool.append(f" '{field}' => ${field}\n\t\t,")
                             insert_param_pool.append(f"\n\t, ${field} = NULL")
@@ -140,15 +139,15 @@ def parce_scheme(filename):
                             obj['update_arr'] += f" '{field}' => ${field}\n\t\t,"
                 case [field, tab, to]:
                     to_model = f"Model_{tab.capitalize()}"
-                    obj['foreign_req'] += f"\nrequire_rel(__DIR__,'../{to_model}/check');\n"
-                    obj['needed_check'][tab] =obj['needed_check'].get(tab) or '' + f"function check_{field}($con, ${field}){{\n\treturn check($con,\"`{field}`=?`\", ${field});\n}}"
+                    obj['foreign_req'] += f"\nrequire_once realpath(__DIR__ . '/../{to_model}/check');\n"
+                    obj['needed_check'][tab] = obj['needed_check'].get(tab) or '' + f"function check_{field}($con, ${field}){{\n\treturn check($con,\"`{field}`=?`\", ${field});\n}}"
                     obj['foreign_check'] += f"if(! \\{to_model}\\check_{field}($con, $obj['{field}']) )\n\t\treturn ['status'=>ID_ERROR];\n\t"
-                    obj['param_id'] = f"\n\t, ${field}"
-                    obj['where_id'] = f"`{field}` = :{field}, "
-                    obj['update_id'] = f" '{field}' => ${field}\n\t\t,"
-                    obj['delete_id'] = f"'{field}' => ${field}, "
-                    obj['select_id'] = obj.get('select_id') + f" AND `{field}`=?" if obj.get('select_id') else f"`{field}`=?"
-                    obj['insert_param'] += f' ${field}\n\t,'
+                    obj['param_id'] += f"\n\t, ${field}"
+                    obj['where_id'] += f"`{field}` = :{field}, "
+                    obj['update_id'] += f" '{field}' => ${field}\n\t\t,"
+                    obj['delete_id'] += f"'{field}' => ${field}, "
+                    obj['select_id'] += obj.get('select_id') + f" AND `{field}`=?" if obj.get('select_id') else f"`{field}`=?"
+                    obj['insert_param'] += f'\n\t, ${field}'
                     obj['insert_arr'] += f" '{field}' => ${field}\n\t\t,"
     
     for (i,k) in enumerate(insert_pool):
@@ -178,7 +177,6 @@ with os.scandir(path_scheme) as d:
             table = file.name.split('.')[0]
             Table = table.capitalize()
             parced = parce_scheme(path_scheme+file.name)
-            check[table] = ''
             for (tab,need) in parced['needed_check'].items():
                 check[tab] = check.get(tab) or ''
                 if( not need in check[tab]): 

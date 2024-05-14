@@ -2,9 +2,10 @@
 namespace Model_Album_genre;
 
 function delete(\PDO $con
+	, $album_id
 	, $genre_id
 ):\Either{
-    $qu = $con->prepare("DELETE FROM `album_genre` WHERE `genre_id` = :genre_id");
-    $st = $qu->execute(['genre_id' => $genre_id, ]);
+    $qu = $con->prepare("DELETE FROM `album_genre` WHERE `album_id` = :album_id, `genre_id` = :genre_id");
+    $st = $qu->execute(['album_id' => $album_id, 'genre_id' => $genre_id, ]);
     return !$st? new \Err(ID_ERROR) : new \Ok('');
 }

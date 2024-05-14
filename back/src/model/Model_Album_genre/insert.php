@@ -1,14 +1,13 @@
 <?php
 namespace Model_Album_genre;
+require_once realpath(__DIR__ . '/../Model_Album/check');
 
-require_rel(__DIR__,'../Model_Album/check');
-
-require_rel(__DIR__,'../Model_Genre/check');
+require_once realpath(__DIR__ . '/../Model_Genre/check');
 
 
-function insert(\PDO $con $album_id
+function insert(\PDO $con
+	, $album_id
 	, $genre_id
-	,
 ):\Either{
     $obj = [
         'album_id' => $album_id

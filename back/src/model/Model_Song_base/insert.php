@@ -1,5 +1,5 @@
 <?php
-namespace Model_Song;
+namespace Model_Song_base;
 require_once realpath(__DIR__ . '/../Model_Album/check');
 
 

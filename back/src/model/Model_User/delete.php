@@ -2,9 +2,9 @@
 namespace Model_User;
 
 function delete(\PDO $con
-	, $user_id
+	, $user_name
 ):\Either{
-    $qu = $con->prepare("DELETE FROM `user` WHERE `user_id` = :user_id");
-    $st = $qu->execute(['user_id' => $user_id, ]);
+    $qu = $con->prepare("DELETE FROM `user` WHERE `user_name` = :user_name");
+    $st = $qu->execute(['user_name' => $user_name, ]);
     return !$st? new \Err(ID_ERROR) : new \Ok('');
 }

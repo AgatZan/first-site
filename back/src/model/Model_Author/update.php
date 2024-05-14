@@ -4,10 +4,12 @@ namespace Model_Author;
 function update( \PDO $con
 	, $author_id
 	, $author_name = NULL
+	, $author_page = NULL
 ):\Either{
     $obj =[
         'author_id' => $author_id
 		, 'author_name' => $author_name
+		, 'author_page' => $author_page
     ];
     $obj = array_filter($obj);
     return update_dto($con, $obj);       

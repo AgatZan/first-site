@@ -1,7 +1,6 @@
 <?php
 namespace Model_Collection;
 
-
 function insert(\PDO $con
 	, $collection_title
 ):\Either{
