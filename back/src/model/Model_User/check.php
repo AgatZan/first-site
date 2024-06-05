@@ -7,6 +7,6 @@ function check(\PDO $con, $where, $what):bool{
     $obj = $qu->fetchAll(\PDO::FETCH_ASSOC);
     return boolval($obj);
 }
-function check_user_name($con, $user_name){
-	return check($con,"`user_name`=?`", $user_name);
+function check_user__name($con, $user__name){
+	return check($con,"`user__name`=?`", $user__name);
 }

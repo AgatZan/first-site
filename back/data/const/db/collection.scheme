@@ -1,2 +1,2 @@
-collection_id PRIMARY
-collection_title
+collection__id PRIMARY
+collection__name

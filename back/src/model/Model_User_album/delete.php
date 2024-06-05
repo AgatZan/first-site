@@ -2,10 +2,10 @@
 namespace Model_User_album;
 
 function delete(\PDO $con
-	, $user_name
-	, $album_id
+	, $user__name
+	, $album__id
 ):\Either{
-    $qu = $con->prepare("DELETE FROM `user_album` WHERE `user_name` = :user_name, `album_id` = :album_id");
-    $st = $qu->execute(['user_name' => $user_name, 'album_id' => $album_id, ]);
+    $qu = $con->prepare("DELETE FROM `user_album` WHERE `user__name` = :user__name, `album__id` = :album__id");
+    $st = $qu->execute(['user__name' => $user__name, 'album__id' => $album__id, ]);
     return !$st? new \Err(ID_ERROR) : new \Ok('');
 }

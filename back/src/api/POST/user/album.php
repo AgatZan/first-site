@@ -1,7 +1,5 @@
 <?php
 require_once MODEL . 'Model_User_album/insert.php';
-header('Content-Type: application/json; charset=utf-8');
-session_start();
 require_once UTILS . 'serialize.php';
 require_once DB_CONNECT;
 function get($cont,$key){
@@ -15,8 +13,8 @@ function get($cont,$key){
 CON->beginTransaction();
 either_catch(\Model_User_album\insert(
     CON
-    , get($_SESSION,'user_name')
-    , get($_POST, 'album_id')
+    , get($_SESSION,'user__name')
+    , get($_POST, 'album__id')
 ));
 CON->commit();
 return json_encode(['err'=>null]);

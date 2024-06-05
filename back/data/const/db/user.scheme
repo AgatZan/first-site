@@ -1,2 +1,3 @@
-user_name PRIMARY
-user_password
+user__name PRIMARY
+user__password
+album__id album album__id

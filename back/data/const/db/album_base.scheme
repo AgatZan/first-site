@@ -1,6 +1,9 @@
-album_id PRIMARY
-album_name
-album_type
-author_id author author_id
-album_release_date DEFAULT+UPDATE
-album_cover
+album__id PRIMARY
+album__name
+album__type
+album__author__id author author__id
+album__release_date DEFAULT+UPDATE
+album__cover
+album__price
+album__discount DEFAULT
+album__remains

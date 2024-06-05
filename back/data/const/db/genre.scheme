@@ -1,2 +1,2 @@
-genre_id PRIMARY
-genre_name
+genre__id PRIMARY
+genre__name

@@ -2,12 +2,12 @@
 namespace Model_Author;
 
 function insert(\PDO $con
-	, $author_name
-	, $author_page
+	, $author__name
+	, $author__page
 ):\Either{
     $obj = [
-        'author_name' => $author_name
-		, 'author_page' => $author_page
+        'author__name' => $author__name
+		, 'author__page' => $author__page
     ];
     $obj = array_filter($obj);
     return insert_dto($con, $obj);
@@ -23,6 +23,15 @@ function insert_dto(\PDO $con, $obj):\Either{
     $inset = substr($inset, 0, -1);
 	$qu = $con->prepare("INSERT INTO `message` ($set) 
         VALUES ($inset)
+    ");
+    $st = $qu->execute($obj);
+    return  !$st? new \Err(ID_ERROR) : new \Ok($obj);
+}
+function insert_many(\PDO $con, $count, $obj){
+    $set = '';
+    $inset = str_repeat('(?,?)', $count);
+	$qu = $con->prepare("INSERT INTO `message` ($set) 
+        VALUES $inset
     ");
     $st = $qu->execute($obj);
     return  !$st? new \Err(ID_ERROR) : new \Ok($obj);

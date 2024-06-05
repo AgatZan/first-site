@@ -1,4 +1,5 @@
-news_id PRIMARY
-news_path
-news_cover_path
-news_text
+news__id PRIMARY
+news__path
+news__name
+news__cover_path
+news__text

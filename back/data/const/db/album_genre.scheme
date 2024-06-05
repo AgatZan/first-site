@@ -1,2 +1,2 @@
-album_id album album_id
-genre_id genre genre_id
+album__id album_base+PRIMARY album__id
+genre__id genre+PRIMARY genre__id

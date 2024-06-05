@@ -2,7 +2,6 @@
 require_once MODEL . 'Model_Author/insert.php';
 require_once MODEL . 'Model_Author/addons.php';
 require_once MODEL . 'Model_Album/select.php';
-header('Content-Type: application/json; charset=utf-8');
 require_once UTILS . 'serialize.php';
 require_once DB_CONNECT;
 function get($key){
@@ -13,17 +12,16 @@ function get($key){
     }
     return $_POST[$key];
 }
-
 CON->beginTransaction();
 either_catch(\Model_Author\insert(
     CON
-    , get('author_name')
-    , get('author_page')
+    , get('author__name')
+    , get('author__page')
 ));
-$page_name = "../../../../static/". $_POST['author_page'];
+$page_name = $_SERVER['DOCUMENT_ROOT'] ."/static/". $_POST['author_page'];
 \Model_Author\addon_create_hp(
-    $_POST['author_name']
-    , $page_name
+    $_POST['author__name']
+    , $_POST['author__page']
 );
 CON->commit();
 return json_encode(['err'=>null]);

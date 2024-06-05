@@ -1,3 +1,4 @@
-song_id PRIMARY
-song_name
-album_id album album_id
+song__id PRIMARY
+song__name
+song__path
+album__id album album__id

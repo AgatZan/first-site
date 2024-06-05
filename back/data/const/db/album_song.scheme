@@ -1,0 +1,2 @@
+album__id album_base+PRIMARY album__id
+song__id song_base+PRIMARY song__id

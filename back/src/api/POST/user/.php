@@ -1,6 +1,5 @@
 <?php
 require_once MODEL . 'Model_User/insert.php';
-header('Content-Type: application/json; charset=utf-8');
 require_once UTILS . 'serialize.php';
 require_once DB_CONNECT;
 function get($key){
@@ -14,9 +13,9 @@ function get($key){
 CON->beginTransaction();
 either_catch(\Model_User\insert(
     CON
-    , get('user_name')
-    , password_hash(get('user_password'), PASSWORD_BCRYPT)
+    , get('user__name')
+    , password_hash(get('user__password'), PASSWORD_BCRYPT)
 ));
 CON->commit();
-$_SESSION['user_name'] = $_POST['user_name'];
+$_SESSION['user__name'] = $_POST['user__name'];
 return json_encode(['err'=>null]);

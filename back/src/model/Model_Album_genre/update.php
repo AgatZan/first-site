@@ -2,12 +2,12 @@
 namespace Model_Album_genre;
 
 function update( \PDO $con
-	, $album_id
-	, $genre_id
+	, $album__id
+	, $genre__id
 ):\Either{
     $obj =[
-        'album_id' => $album_id
-		, 'genre_id' => $genre_id
+        'album__id' => $album__id
+		, 'genre__id' => $genre__id
 		,
     ];
     $obj = array_filter($obj);
@@ -18,7 +18,7 @@ function update_dto(\PDO $con, $obj):\Either{
     foreach($obj as $key=>$val)
         $set .= "`$key`=:$key,";
     $set = substr($set, 0, -1);
-    $qu = $con->prepare("UPDATE `album_genre` SET $set WHERE `album_id` = :album_id, `genre_id` = :genre_id");
+    $qu = $con->prepare("UPDATE `album_genre` SET $set WHERE `album__id` = :album__id, `genre__id` = :genre__id");
     $st = $qu->execute($obj);
     return !$st? new \Err(PASS_LOG_ERROR) : new \Ok('');
 }

@@ -2,10 +2,10 @@
 namespace Model_Collection;
 
 function insert(\PDO $con
-	, $collection_title
+	, $collection__name
 ):\Either{
     $obj = [
-        'collection_title' => $collection_title
+        'collection__name' => $collection__name
     ];
     $obj = array_filter($obj);
     return insert_dto($con, $obj);
@@ -21,6 +21,15 @@ function insert_dto(\PDO $con, $obj):\Either{
     $inset = substr($inset, 0, -1);
 	$qu = $con->prepare("INSERT INTO `message` ($set) 
         VALUES ($inset)
+    ");
+    $st = $qu->execute($obj);
+    return  !$st? new \Err(ID_ERROR) : new \Ok($obj);
+}
+function insert_many(\PDO $con, $count, $obj){
+    $set = '';
+    $inset = str_repeat('(?)', $count);
+	$qu = $con->prepare("INSERT INTO `message` ($set) 
+        VALUES $inset
     ");
     $st = $qu->execute($obj);
     return  !$st? new \Err(ID_ERROR) : new \Ok($obj);

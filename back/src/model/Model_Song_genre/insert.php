@@ -1,25 +1,25 @@
 <?php
 namespace Model_Song_genre;
-require_once realpath(__DIR__ . '/../Model_Song/check');
+require_once realpath(__DIR__ . '/../Model_Song_base/check');
 
 require_once realpath(__DIR__ . '/../Model_Genre/check');
 
 
 function insert(\PDO $con
-	, $song_id
-	, $genre_id
+	, $song__id
+	, $genre__id
 ):\Either{
     $obj = [
-        'song_id' => $song_id
-		, 'genre_id' => $genre_id
+        'song__id' => $song__id
+		, 'genre__id' => $genre__id
     ];
     $obj = array_filter($obj);
     return insert_dto($con, $obj);
 }
 function insert_dto(\PDO $con, $obj):\Either{ 
-    if(! \Model_Song\check_song_id($con, $obj['song_id']) )
+    if(! \Model_Song_base\check_song__id($con, $obj['song__id']) )
 		return ['status'=>ID_ERROR];
-	if(! \Model_Genre\check_genre_id($con, $obj['genre_id']) )
+	if(! \Model_Genre\check_genre__id($con, $obj['genre__id']) )
 		return ['status'=>ID_ERROR];
 	$set = '';
     $inset = '';
@@ -31,6 +31,19 @@ function insert_dto(\PDO $con, $obj):\Either{
     $inset = substr($inset, 0, -1);
 	$qu = $con->prepare("INSERT INTO `message` ($set) 
         VALUES ($inset)
+    ");
+    $st = $qu->execute($obj);
+    return  !$st? new \Err(ID_ERROR) : new \Ok($obj);
+}
+function insert_many(\PDO $con, $count, $obj){
+    if(! \Model_Song_base\check_song__id($con, $obj['song__id']) )
+		return ['status'=>ID_ERROR];
+	if(! \Model_Genre\check_genre__id($con, $obj['genre__id']) )
+		return ['status'=>ID_ERROR];
+	$set = '';
+    $inset = str_repeat('(?,?)', $count);
+	$qu = $con->prepare("INSERT INTO `message` ($set) 
+        VALUES $inset
     ");
     $st = $qu->execute($obj);
     return  !$st? new \Err(ID_ERROR) : new \Ok($obj);

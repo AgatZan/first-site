@@ -1,15 +1,16 @@
 import { Album } from "../album"
-
+function createAlbumHorizontalRoot(){
+    var horizontal = document.createElement('div');
+    horizontal.classList.add('album-card', 'album-card_orientation_horizontal');
+    return horizontal;
+}
 export class AlbumHorizontal extends Album{
-    constructor(v, ondelete){
-        super(v);
+    constructor(v, ondelete, root=createAlbumHorizontalRoot()){
+        super(v, root);
         this.ondelete = ondelete;
     }
     html(){
-        var horizontal = document.createElement('div');
-
-        horizontal.classList.add('album-card', 'album-card_orientation_horizontal');
-        horizontal.innerHTML = `
+        this.root.innerHTML = `
         <div class="album-card__container-image">
                 <img src="${this.cover}" alt="${this.coverPlaceholder}" class="album-card__cover">
             </div>
@@ -35,7 +36,7 @@ export class AlbumHorizontal extends Album{
         del.className = 'album-card__delete';
         del.onclick = e=>{e.stopPropagation(); this.ondelete()};
         price.append(del);
-        horizontal.append(price);
-        return horizontal;
+        this.root.append(price);
+        return this.root;
     }
 }

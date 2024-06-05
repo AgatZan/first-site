@@ -13,11 +13,11 @@ function select_where($con, $where, $what){
 }
 function select($con, $from, $count=1000){
     $qu = $con->prepare("SELECT * FROM `collection` LIMIT ?,?");
-    $st = $con->execute([$from, $count]);
+    $st = $con->execute([$count, $from]);
     return  !$st? new \Err(ID_ERROR) : new \Ok($st->fetchAll(\PDO::FETCH_ASSOC));
 }
 function select_id($con, $id){
-    $qu = $con->prepare("SELECT * FROM `collection` WHERE `collection_id`=?");
+    $qu = $con->prepare("SELECT * FROM `collection` WHERE `collection__id`=?");
     $st = $con->execute($id);
     return  !$st? new \Err(ID_ERROR) : new \Ok($st->fetchAll(\PDO::FETCH_ASSOC));
 }

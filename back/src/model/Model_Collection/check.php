@@ -7,6 +7,6 @@ function check(\PDO $con, $where, $what):bool{
     $obj = $qu->fetchAll(\PDO::FETCH_ASSOC);
     return boolval($obj);
 }
-function check_collection_id($con, $collection_id){
-	return check($con,"`collection_id`=?`", $collection_id);
+function check_collection__id($con, $collection__id){
+	return check($con,"`collection__id`=?`", $collection__id);
 }

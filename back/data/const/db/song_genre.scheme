@@ -1,2 +1,2 @@
-song_id song song_id
-genre_id genre genre_id
+song__id song_base+PRIMARY song__id
+genre__id genre+PRIMARY genre__id

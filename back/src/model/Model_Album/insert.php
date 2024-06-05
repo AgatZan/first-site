@@ -2,30 +2,40 @@
 namespace Model_Album;
 
 function insert(\PDO $con
-	, $album_name
-	, $estimation
-	, $album_genre_id
-	, $album_genre_name
-	, $author_id
-	, $author_name
-	, $song_id
-	, $song_name
-	, $song_genre_id
-	, $song_genre_name
-	, $album_release_date = NULL
+	, $album__name
+	, $album__price
+	, $album__discount
+	, $album__type
+	, $album__remains
+	, $album__cover
+	, $album__estimation
+	, $album__genre__id
+	, $album__genre__name
+	, $album__author__id
+	, $album__author__name
+	, $album__song__id
+	, $album__song__name
+	, $album__song__genre__id
+	, $album__song__genre__name
+	, $album__release_date = NULL
 ):\Either{
     $obj = [
-        'album_name' => $album_name
-		, 'estimation' => $estimation
-		, 'album_genre_id' => $album_genre_id
-		, 'album_genre_name' => $album_genre_name
-		, 'author_id' => $author_id
-		, 'author_name' => $author_name
-		, 'song_id' => $song_id
-		, 'song_name' => $song_name
-		, 'song_genre_id' => $song_genre_id
-		, 'song_genre_name' => $song_genre_name
-		, 'album_release_date' => $album_release_date
+        'album__name' => $album__name
+		, 'album__price' => $album__price
+		, 'album__discount' => $album__discount
+		, 'album__type' => $album__type
+		, 'album__remains' => $album__remains
+		, 'album__cover' => $album__cover
+		, 'album__estimation' => $album__estimation
+		, 'album__genre__id' => $album__genre__id
+		, 'album__genre__name' => $album__genre__name
+		, 'album__author__id' => $album__author__id
+		, 'album__author__name' => $album__author__name
+		, 'album__song__id' => $album__song__id
+		, 'album__song__name' => $album__song__name
+		, 'album__song__genre__id' => $album__song__genre__id
+		, 'album__song__genre__name' => $album__song__genre__name
+		, 'album__release_date' => $album__release_date
     ];
     $obj = array_filter($obj);
     return insert_dto($con, $obj);
@@ -41,6 +51,15 @@ function insert_dto(\PDO $con, $obj):\Either{
     $inset = substr($inset, 0, -1);
 	$qu = $con->prepare("INSERT INTO `message` ($set) 
         VALUES ($inset)
+    ");
+    $st = $qu->execute($obj);
+    return  !$st? new \Err(ID_ERROR) : new \Ok($obj);
+}
+function insert_many(\PDO $con, $count, $obj){
+    $set = '';
+    $inset = str_repeat('(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $count);
+	$qu = $con->prepare("INSERT INTO `message` ($set) 
+        VALUES $inset
     ");
     $st = $qu->execute($obj);
     return  !$st? new \Err(ID_ERROR) : new \Ok($obj);

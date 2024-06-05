@@ -1,7 +1,5 @@
 <?php
-session_start();
-header('Content-Type: application/json; charset=utf-8');
-if(isset($_SESSION['user_name']))
+if(isset($_SESSION['user__name']))
 exit(json_encode(['err'=>null]));
 
 require_once MODEL . 'Model_User/select.php';
@@ -16,7 +14,7 @@ function get($key){
 }
 either_catch(\Model_User\select_id(CON, [get('user_name')]))
 ->unpack(function($val){
-    if(!password_verify(get('user_password'), $val['user_password']))
-    $_SESSION['user_name'] = $val['user_name'];
+    if(!password_verify(get('user__password'), $val['user__password']))
+    $_SESSION['user__name'] = $val['user__name'];
     exit(json_encode(['err'=>null]));
 });

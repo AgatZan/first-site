@@ -1,2 +1,2 @@
-collection_id collection collection_id
-album_id album album_id
+collection__id collection+PRIMARY collection__id
+album__id album+PRIMARY album__id

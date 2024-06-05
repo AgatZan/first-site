@@ -9,6 +9,7 @@
     <title>M store</title>
 </head>
 <body>
+    <script type="module" src="/registration.js"></script>
     <header class="header" id="header">
         <article class="top-panel">
             <div class="social">
@@ -38,10 +39,6 @@
                         <fieldset>
                             <label for="login">Login: </label>
                             <input id="login" type="text" placeholder="Alini" required>
-                        </fieldset>
-                        <fieldset>
-                            <label for="email">Email: </label>
-                            <input id="email" type="email" placeholder="exemaple@mail" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i" required>
                         </fieldset>
                         <fieldset>
                             <label for="pass">Password: </label>
@@ -201,11 +198,10 @@
                     </div>
                     <div class="box-tag">
                         <h2 class="box-tag__box-title">Tag Cloud</h2>
-                        <a href="#" class="box-tag__tag">Audio CD</a>
-                        <a href="#" class="box-tag__tag">Video</a>
-                        <a href="#" class="box-tag__tag">Playlist</a>
-                        <a href="#" class="box-tag__tag">Avantgarde</a>
-                        <a href="#" class="box-tag__tag">Melancholic</a>
+                        <a href="/charts?format=cd" class="box-tag__tag">Audio CD</a>
+                        <a href="/charts?format=playlist" class="box-tag__tag">Playlist</a>
+                        <a href="/charts?tag=1" class="box-tag__tag">Avantgarde</a>
+                        <a href="/charts?tag=01" class="box-tag__tag">Melancholic</a>
                     </div>
                 </div>
             </div>

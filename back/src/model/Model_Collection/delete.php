@@ -2,9 +2,9 @@
 namespace Model_Collection;
 
 function delete(\PDO $con
-	, $collection_id
+	, $collection__id
 ):\Either{
-    $qu = $con->prepare("DELETE FROM `collection` WHERE `collection_id` = :collection_id");
-    $st = $qu->execute(['collection_id' => $collection_id, ]);
+    $qu = $con->prepare("DELETE FROM `collection` WHERE `collection__id` = :collection__id");
+    $st = $qu->execute(['collection__id' => $collection__id, ]);
     return !$st? new \Err(ID_ERROR) : new \Ok('');
 }

@@ -1,2 +1,2 @@
-user_name user user_name
-album_id album album_id
+user__name user_base+PRIMARY user__name
+album__id album_base+PRIMARY album__id

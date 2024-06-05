@@ -7,6 +7,6 @@ function check(\PDO $con, $where, $what):bool{
     $obj = $qu->fetchAll(\PDO::FETCH_ASSOC);
     return boolval($obj);
 }
-function check_album_id($con, $album_id){
-	return check($con,"`album_id`=?`", $album_id);
+function check_album__id($con, $album__id){
+	return check($con,"`album__id`=?`", $album__id);
 }

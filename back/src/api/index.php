@@ -1,6 +1,6 @@
 <?php
     session_start();
-    
+    header('Content-Type: application/json; charset=utf-8');  
     require_once $_SERVER['DOCUMENT_ROOT'] . '/back/data/const/links.php';
     require_once $_SERVER['DOCUMENT_ROOT'] . '/back/data/const/error.php';
     require_once UTILS . 'rout.php';

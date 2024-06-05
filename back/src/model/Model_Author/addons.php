@@ -24,7 +24,7 @@ function addon_create_tag($tag_name){
     <a href="" class="tag album-page__secondary-text">$tag_name</a>
     EOF;
 }
-function addon_create_hp($user_name, $user_page){
+function addon_create_hp($user_name, $user_page, $isnew=false){
     $html = <<<EOF
     <!DOCTYPE html>
     <html lang="en">
@@ -33,7 +33,7 @@ function addon_create_hp($user_name, $user_page){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/css/album-style.min.css">
-        <link rel="icon" type="image/x-icon" href="../../media/images/Favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/media/images/Favicon.ico">
         <title>M store</title>
     </head>
     <body>
@@ -181,6 +181,7 @@ function addon_create_hp($user_name, $user_page){
             </div>
             <div class="album-page__tag-block">
                 <h3 class="Tag-label">Tag</h3>
+                <div class="album-page__tags"></div>
             </div>
             
         </section>
@@ -198,8 +199,8 @@ function addon_create_hp($user_name, $user_page){
     EOF;
 
     $f= fopen($user_page, 'w');
-    if (file_exists($user_page)|| !$f || fwrite($f, $html) === FALSE) {
-        die(['err'=>'Error creating the file']);
+    if (!$isnew&&file_exists($user_page)|| !$f || fwrite($f, $html) === FALSE) {
+        die(json_encode(['err'=>'Error creating the file']));
     }
     
 }

@@ -1,23 +1,23 @@
 import { Album } from "../album";
-
+function createAlbumVerticalRoot(){
+    var horizontal = document.createElement('article');
+    horizontal.classList.add('album-card', 'album-card_orientation_vertical');
+    return horizontal;
+}
 export class AlbumVertical extends Album{
-    constructor(v, albumLink, description, songs, onclick){
-        super(v);
+    constructor(v, songs, onclick, root = createAlbumVerticalRoot()){
+        super(v, root);
         this.onclick = onclick;
         this.albumLink = albumLink;
         this.description = description;
         this.songs = songs;
     }
     html(){
-        var horizontal = document.createElement('article');
-
-        horizontal.classList.add('album-card', 'album-card_orientation_vertical');
-        horizontal.innerHTML = `
+        this.root.innerHTML = `
             <div class="album-card__container-image">
                     <a href="${this.albumLink}" class="album-link">
                         ${this.songs.outerHTML}
                         <img src="${this.cover}" alt="${this.coverPlaceholder}" class="album-card__cover">
-                        ${this.songs.outerHTML}
                     </a>
             </div>
         `;
@@ -46,10 +46,10 @@ export class AlbumVertical extends Album{
         var buy = document.createElement('a');
         buy.className = 'album-card__buy-button';
         buy.innerText = 'ADD TO CARD';
-        buy.onclick = e=>{e.stopPropagation(); this.onclick()};
+        buy.onclick = e=>{e.stopPropagation(); this.onclick(this)};
         price.append(buy);
         info.append(price);
-        horizontal.append(info);
-        return horizontal;
+        this.root.append(info);
+        return this.root;
     }
 }

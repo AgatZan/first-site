@@ -1,0 +1,6 @@
+song__id song_base song__id
+song__name
+song__path
+song__genre__id
+song__genre__name
+song__album__id

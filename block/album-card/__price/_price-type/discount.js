@@ -1,8 +1,6 @@
-import { AlbumHorizontal } from "../../_orientation/horizontal";
-
-export class AlbumHorizontalDiscount extends AlbumVertical{
-    constructor(v, albumLink, description, songs, onclick, discount){
-        super(v, albumLink, description, songs, onclick);
+export class AlbumVerticalDiscount extends AlbumVertical{
+    constructor(v, songs, onclick, discount, root=undefined){
+        super(v, songs, onclick, root);
         this.discount = discount;
     }
     html(){

@@ -1,13 +1,17 @@
 album__id PRIMARY
 album__name
+album__price
+album__discount
+album__type
+album__remains
 album__release_date DEFAULT+UPDATE
 album__cover
 album__estimation
 album__genre__id
 album__genre__name
-author__id
-author__name
-song__id
-song__name
-song__genre__id
-song__genre__name
+album__author__id
+album__author__name
+album__song__id
+album__song__name
+album__song__genre__id
+album__song__genre__name

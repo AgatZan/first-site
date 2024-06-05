@@ -9,18 +9,19 @@
     <title>M store</title>
 </head>
 <body>
+    <script type="module" src="/registration.js" ></script>
     <header class="header" id="header">
         <div class="top-panel">
             <div class="social">
-                <a href="https://www.facebook.com" class="facebook"></a>
-                <a href="https://dribbble.com" class="drible"></a> 
-                <a href="https://twitter.com" class="twitter"></a>
-                <a href="mailto:tinderbox@foo.invalid" class="mail"></a>
-                <a href="https://vimeo.com" class="vimeo"></a>
+                <a target="_blank" href="https://www.facebook.com" class="facebook"></a>
+                <a target="_blank" href="https://dribbble.com" class="drible"></a> 
+                <a target="_blank" href="https://twitter.com" class="twitter"></a>
+                <a target="_blank" href="mailto:tinderbox@foo.invalid" class="mail"></a>
+                <a target="_blank" href="https://vimeo.com" class="vimeo"></a>
             </div>
             <div class="registration-panel">
                 <dialog id="logDialog">
-                    <form method="dialog">
+                    <form method="dialog" action="/api/user/auth">
                         <fieldset>
                             <label for="log-log">Login: </label>
                                 <input id="log-log" type="text" required>
@@ -34,15 +35,12 @@
                     </form>
                 </dialog>
                 <dialog id="regDialog">
-                    <form method="dialog">
+                    <form method="dialog" action="/api/user">
                         <fieldset>
                             <label for="login">Login: </label>
                             <input id="login" type="text" placeholder="Alini" required>
                         </fieldset>
                         <fieldset>
-                            <label for="email">Email: </label>
-                            <input id="email" type="email" placeholder="exemaple@mail" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i" required>
-                        </fieldset>
                         <fieldset>
                             <label for="pass">Password: </label>
                             <input id="pass" type="password" placeholder="123456" required>
@@ -65,45 +63,6 @@
                     </a>                     
                      <div id="drop-down" class="drop-down-menu">
                         <div class="basket__albums">
-                            <div class="album-card album-card_orientation_horizontal">
-                                <div class="album-card__container-image"><img src="media/images/albums/album-main-1-discount.png" alt="first" class="album-card__cover"></div>
-                                <div class="album-card__information">
-                                    <h2 class="album-card__title">Album Title</h2>
-                                    <span class="album-card__author">Artist</span>
-                                    <ul class="album-card__estimation">
-                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                        <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                                    </ul>                                   
-                                </div>
-                           
-                                <div class="album-card__price">
-                                    <span class="album-card__price-value album-card__price_price-type_dollar">14.99</span>
-                                    <div class="album-card__delete">x</div>
-                                </div>
-                            </div>
-                            <div class="album-card album-card_orientation_horizontal">
-                                <div class="album-card__container-image"><img src="media/images/albums/album-main-2.png" alt="second" class="album-card__cover"></div>
-                                <div class="album-card__information" >
-                                    <h2 class="album-card__title">Album Title</h2>
-                                    <span class="album-card__author">Artist</span>
-                                    <ul class="album-card__estimation">
-                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                        <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                                        <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                                    </ul>
-                                                                   
-                                </div>
-                           
-                                <div class="album-card__price">
-                                    <span class="album-card__price-value album-card__price_price-type_dollar">27.59</span>
-                                    <div class="album-card__delete">x</div>
-                                </div>
-                            </div>
                         </div>
                         <div class="drop-down-menu__total-price">
                             <div class="drop-down-menu__total-cost-text">Total delivery cost: </div>
@@ -134,25 +93,8 @@
     <section class="main">
 
 
-        <div class="sideshow">
-            <div class="sideshow__placeholder sideshow__placeholder_left">
-                <div class="sideshow__mover sideshow__mover_theme_circle sideshow__mover_background_arrow-left"></div>
-            </div>
-            <div class="sideshow__placeholder sideshow__placeholder_center"></div>
-            <div class="sideshow__placeholder sideshow__placeholder_right">
-                <div class="sideshow__mover sideshow__mover_theme_circle sideshow__mover_background_arrow-right"></div>
-            </div>
-            <div class="sideshow__block sideshow__block_position_left">
-                <img src="media/images/image1-slide.png" alt="img1" class="sideshow__images">
-            </div>
-            <div class="sideshow__block sideshow__block_position_center">
-                <img src="media/images/image2-slide.png" alt="img2" class="sideshow__images sideshow__images_position_center">
-                <div class="sideshow__text">MUSIC EVENT WITH DJ STARTING AT 20.00 ON AUGUST 15TH</div>
-            </div>
-            <div class="sideshow__block sideshow__block_position_right">
-                <img src="media/images/image3-slide.png" alt="img3" class="sideshow__images">
-            </div>
-        </div>
+        <section class="sideshow">
+        </section>
 
         <h1 class="quote">WELCOME TO <span class="styled-text styled-text_red-board">MUSICA,</span> CHECK OUR LATEST ALBUMS</h1>
 
@@ -182,93 +124,7 @@
             <h1 class="main-card__title">LATEST ARRIVALS IN MUSICA</h1>
             <div class="arrow arrow_direction_left"><a href=""></a></div>
             <div class="arrow arrow_direction_right"><a href=""></a></div>
-            <section class="albums">
-                <article class="album-card album-card_orientaion_vertical" >
-                    <div class="album-card__container-image"><a href="/static/album-page/Oh-my-deer.html" class="album-link"><img src="media/images/albums/album-main-1.png" alt="1" class="album-card__cover"></a></div>
-                    <div class="album-card__information" >
-                        <h2 class="album-card__title">Oh my Deer</h2>
-                        <span class="album-card__author">Artist</span>
-                        <ul class="album-card__estimation">
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                        </ul>
-                        
-                            <p class="album-card__description"><span class="font-weight_bold">Lorem ipsum</span> dolor sit amet, con adipiscing elit, sed diam nonu.</p>
-                        <div class="album-card__price">
-                            <span class="album-card__price-value album-card__price_price-type_dollar">14.99</span>
-                            <a href="#" class="album-card__buy-button">ADD TO CART</a>
-                        </div>    
-                    </div>
-                </article>
-                <article class="album-card album-card_orientaion_vertical">
-                    <div class="album-card__container-image"><a href="/static/album-page/Awaken-the-hero.html" class="album-link"><img src="media/images/albums/album-main-2.png" alt="2" class="album-card__cover"></a></div>
-                    <div class="album-card__information" >
-                        <h2 class="album-card__title">Awaken the Hero</h2>
-                        <span class="album-card__author">Artist</span>
-                        <ul class="album-card__estimation">
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                        </ul>
-                        
-                            <p class="album-card__description"><span class="font-weight_bold">Lorem ipsum</span> dolor sit amet, con adipiscing elit, sed diam nonu.</p>
-                        <div class="album-card__price">
-                            <span class="album-card__price-value album-card__price_price-type_dollar">17.59</span>
-                            <a href="#" class="album-card__buy-button">ADD TO CART</a>
-                        </div>    
-                    </div>
-                </article>
-                <article class="album-card album-card_orientaion_vertical">
-                    <div class="album-card__container-image"><a href="/static/album-page/Bad-dreams.html" class="album-link"><img src="media/images/albums/album-main-3.png" alt="3" class="album-card__cover"></a></div>
-                    <div class="album-card__information" >
-                        <h2 class="album-card__title">Oh my Deer</h2>
-                        <span class="album-card__author">Artist</span>
-                        <ul class="album-card__estimation">
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                        </ul>
-                        
-                            <p class="album-card__description"><span class="font-weight_bold">Lorem ipsum</span> dolor sit amet, con adipiscing elit, sed diam nonu.</p>
-                        <div class="album-card__price">
-                            <span class="album-card__price-value album-card__price_price-type_dollar">8.99</span>
-                            <a href="#" class="album-card__buy-button">ADD TO CART</a>
-                        </div>    
-                    </div>
-                </article>
-                <article class="album-card album-card_orientaion_vertical">
-        
-                
-                    <div class="album-card__container-image "><span class="album-card__cover_special"></span>
-                        <a href="/static/album-page/Revenna.html    " class="album-link">
-                            <img src="media/images/albums/album-main-5.png" alt="4" class="album-card__cover album-card__cover_special">
-                        </a>
-                    </div>
-                    <div class="album-card__information" >
-                        <h2 class="album-card__title">Ravenna</h2>
-                        <span class="album-card__author">Artist</span>
-                        <ul class="album-card__estimation">
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                        </ul>
-                        
-                            <p class="album-card__description"><span class="font-weight_bold">Lorem ipsum</span> dolor sit amet, con adipiscing elit, sed diam nonu.</p>
-                        <div class="album-card__price">
-                            <span class="album-card__price-value album-card__price_price-type_dollar">22.99</span>
-                            <a href="#" class="album-card__buy-button">ADD TO CART</a>
-                        </div>    
-                    </div>
-                </article>
+            <section class="albums albums_simple">
             </section>
         </article>
 
@@ -277,87 +133,7 @@
             <h1 class="main-card__title">ALBUMS CURRENTLY ON SALE</h1>
             <div class="arrow arrow_direction_left"><a href=""></a></div>
             <div class="arrow arrow_direction_right"><a href=""></a></div>
-            <section class="albums">
-                <article class="album-card album-card_orientaion_vertical album-card_price_discount">
-                    <div class="album-card__container-image"><a href="/static/album-page/Caribou.html" class="album-link"><img src="media/images/albums/album-main-1-discount.png" alt="album-main-1-discount" class="album-card__cover album-card__cover_discount"></a></div>
-                    <div class="album-card__information" >
-                        <h2 class="album-card__title">Caribou</h2>
-                        <span class="album-card__author">Artist</span>
-                        <ul class="album-card__estimation">
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                        </ul>
-                        
-                            <p class="album-card__description"><span class="font-weight_bold">Lorem ipsum</span> dolor sit amet, con adipiscing elit, sed diam nonu.</p>
-                        <div class="album-card__price">
-                            <span class="album-card__price-value album-card__price_price-type_dollar album-card__price_price-type_discount">14.99</span>
-                            <a href="#" class="album-card__buy-button">ADD TO CART</a>
-                        </div>    
-                    </div>
-                </article>
-                <article class="album-card album-card_orientaion_vertical album-card_price_discount">
-                    <div class="album-card__container-image"><a href="/static/album-page/Aqualung.html" class="album-link"><img src="media/images/albums/album-main-2-discount.png" alt="album-main-2-discount" class="album-card__cover album-card__cover_discount"></a></div>
-                    <div class="album-card__information" >
-                        <h2 class="album-card__title">Aqualung</h2>
-                        <span class="album-card__author">Artist</span>
-                        <ul class="album-card__estimation">
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                        </ul>
-                        
-                            <p class="album-card__description"><span class="font-weight_bold">Lorem ipsum</span> dolor sit amet, con adipiscing elit, sed diam nonu.</p>
-                        <div class="album-card__price">
-                            <span class="album-card__price-value album-card__price_price-type_dollar album-card__price_price-type_discount">14.99</span>
-                            <a href="#" class="album-card__buy-button">ADD TO CART</a>
-                        </div>    
-                    </div>
-                </article>
-                <article class="album-card album-card_orientaion_vertical album-card_price_discount">
-                    <div class="album-card__container-image"><a href="/static/album-page/StrangetoEars.html" class="album-link"><img src="media/images/albums/album-main-3-discount.png" alt="album-main-3-discount" class="album-card__cover album-card__cover_discount"></a></div>
-                    <div class="album-card__information" >
-                        <h2 class="album-card__title">Strange to earse</h2>
-                        <span class="album-card__author">Artist</span>
-                        <ul class="album-card__estimation">
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                        </ul>
-                        
-                            <p class="album-card__description"><span class="font-weight_bold">Lorem ipsum</span> dolor sit amet, con adipiscing elit, sed diam nonu.</p>
-                        <div class="album-card__price">
-                            <span class="album-card__price-value album-card__price_price-type_dollar album-card__price_price-type_discount">14.99</span>
-                            <a href="#" class="album-card__buy-button">ADD TO CART</a>
-                        </div>    
-                    </div>
-                </article>
-                <article class="album-card album-card_orientaion_vertical album-card_price_discount">
-                    <div class="album-card__container-image"><a href="/static/album-page/Back-from.html" class="album-link"><img src="media/images/albums/album-main-4-discount.png" alt="album-main-4-discount" class="album-card__cover album-card__cover_discount"></a></div>
-                    <div class="album-card__information" >
-                        <h2 class="album-card__title">Ravenna</h2>
-                        <span class="album-card__author">Artist</span>
-                        <ul class="album-card__estimation">
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star "></a></li>
-                            <li class="album-card__score"><a href="" class="album-card__star album-card__star_state_unactive"></a></li>
-                        </ul>
-                        
-                            <p class="album-card__description"><span class="font-weight_bold">Lorem ipsum</span> dolor sit amet, con adipiscing elit, sed diam nonu.</p>
-                        <div class="album-card__price">
-                            <span class="album-card__price-value album-card__price_price-type_dollar album-card__price_price-type_discount">14.99</span>
-                            <a href="#" class="album-card__buy-button">ADD TO CART</a>
-                        </div>    
-                    </div>
-                </article>
+            <section class="albums albums_discount">
             </section>
         </article>
 
@@ -388,11 +164,11 @@
                     <div class="important-info__box-social">
                         <h2 class="important-info__box-title">Sociallize with us</h2>
                         <div class="social social_theme_black">
-                        <a href="http://facebook.com/" class="facebook"></a>
-                        <a href="http://twitter.com" class="twitter"></a>
-                        <a href="https://dribbble.com" class="drible"></a>
-                        <a href="https://digg.com" class="digg"></a>
-                        <a href="https://mail.google.com" class="mail"></a>
+                        <a target="_blank" href="http://facebook.com/" class="facebook"></a>
+                        <a target="_blank" href="http://twitter.com" class="twitter"></a>
+                        <a target="_blank" href="https://dribbble.com" class="drible"></a>
+                        <a target="_blank" href="https://digg.com" class="digg"></a>
+                        <a target="_blank" href="https://mail.google.com" class="mail"></a>
                         </div>
                     </div>
                 </div>
@@ -432,11 +208,10 @@
                     </div>
                     <div class="box-tag">
                         <h2 class="box-tag__box-title">Tag Cloud</h2>
-                        <a href="#" class="box-tag__tag">Audio CD</a>
-                        <a href="#" class="box-tag__tag">Video</a>
-                        <a href="#" class="box-tag__tag">Playlist</a>
-                        <a href="#" class="box-tag__tag">Avantgarde</a>
-                        <a href="#" class="box-tag__tag">Melancholic</a>
+                        <a href="/charts?format=cd" class="box-tag__tag">Audio CD</a>
+                        <a href="/charts?format=playlist" class="box-tag__tag">Playlist</a>
+                        <a href="/charts?tag=1" class="box-tag__tag">Avantgarde</a>
+                        <a href="/charts?tag=01" class="box-tag__tag">Melancholic</a>
                     </div>
                 </div>
             </div>
@@ -453,5 +228,7 @@
             </ul>
             <p class="lover-info__copyright-block">Musica @2013 by PremiumCoding | All Rights Reserved</p>
         </div>
+        <script type="module" src="/index.js" defer></script>
+        <script type="module" src="/registration.js" defer></script>
 </body>
 </html>

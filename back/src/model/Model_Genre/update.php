@@ -2,12 +2,12 @@
 namespace Model_Genre;
 
 function update( \PDO $con
-	, $genre_id
-	, $genre_name = NULL
+	, $genre__id
+	, $genre__name = NULL
 ):\Either{
     $obj =[
-        'genre_id' => $genre_id
-		, 'genre_name' => $genre_name
+        'genre__id' => $genre__id
+		, 'genre__name' => $genre__name
     ];
     $obj = array_filter($obj);
     return update_dto($con, $obj);       
@@ -17,7 +17,7 @@ function update_dto(\PDO $con, $obj):\Either{
     foreach($obj as $key=>$val)
         $set .= "`$key`=:$key,";
     $set = substr($set, 0, -1);
-    $qu = $con->prepare("UPDATE `genre` SET $set WHERE `genre_id` = :genre_id");
+    $qu = $con->prepare("UPDATE `genre` SET $set WHERE `genre__id` = :genre__id");
     $st = $qu->execute($obj);
     return !$st? new \Err(PASS_LOG_ERROR) : new \Ok('');
 }

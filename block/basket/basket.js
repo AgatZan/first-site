@@ -1,34 +1,37 @@
 import { AlbumHorizontal } from "../album-card/_orientation/horizontal";
-
-AlbumHorizontal
+function createBasketRoot(){
+    var basket = document.createElement('div');
+    basket.className = 'basket';
+    return basket;
+}
 export class Basket{
-    constructor(albums){
+    constructor(albums, root=createBasketRoot()){
         this.albums = albums;
+        this.root = root;
+        this.html();
     }
-    totalPrice(basket){
+    totalPrice(){
         var res = this.cost;
         if(!res) res = this.albums.reduce((acc,v)=>acc + v.price);
-        basket.style.setProperty('--basket-count', ' ('+this.albums.length+')');
+        this.root.style.setProperty('--basket-count', ' ('+this.albums.length+')');
         return res;
     }
-    insertAlbum(album, basket){
+    insertAlbum(album){
         document.getElementsByClassName('backet__albums')[0].append(album.html());
         this.albums.push(album);
         document.getElementsByClassName('drop-down-menu__total-cost-value')[0]
-        .innerText = this.cost = this.totalPrice(basket) + album.price;
+        .innerText = this.cost = this.totalPrice() + album.price;
     }
-    deleteAlbum(id, basket){
+    deleteAlbum(id){
         var deleted = this.albums[id];
         this.albums.splice(id, 1);
         var albs =document.querySelector('basket__albums');
         albs.removeChild(albs.children[id]);
         document.getElementsByClassName('drop-down-menu__total-cost-value')[0]
-        .innerText = this.cost = this.totalPrice(basket) - deleted.price;
+        .innerText = this.cost = this.totalPrice() - deleted.price;
     }
     html(){
-        var basket = document.createElement('div');
-        basket.className = 'basket';
-        basket.style.setProperty('--basket-count', ' ('+this.albums.length+')');
+        this.root.style.setProperty('--basket-count', ' ('+this.albums.length+')');
         var opener = document.createElement('a');
         opener.className = 'basket__goods';
         opener.innerHTML = '<p>Cart</p>';
@@ -48,7 +51,7 @@ export class Basket{
         totalPrice.className = 'drop-down-menu__total-price';
         totalPrice.innerHTML = `
             <div class="drop-down-menu__total-cost-text">Total delivery cost: </div>
-            <div class="drop-down-menu__total-cost-value album-card__price_price-type_dollar">${this.totalPrice(basket)}</div>
+            <div class="drop-down-menu__total-cost-value album-card__price_price-type_dollar">${this.totalPrice()}</div>
         `;
         
         var userChoose = document.createElement('div');
@@ -57,15 +60,10 @@ export class Basket{
             <a href="" class="drop-down-menu__view styled-text_grey-border">View Card</a>
             <a href="" class="drop-down-menu__checkout styled-text_grey-border">Proceed to Checkout</a>
         `;
-        
-        dropDown.append(backetAlbums);
-        dropDown.append(totalPrice);
-        dropDown.append(userChoose);
+        dropDown.append(backetAlbums, totalPrice, userChoose);
 
-        basket.append(opener);
-        basket.append(dropDown);
-
-        return basket;
+        this.root.append(opener,dropDown);
+        this.root.append(dropDown);
 
     }
 }

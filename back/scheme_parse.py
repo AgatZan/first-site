@@ -18,7 +18,7 @@ function select_where($con, $where, $what){{
 }}
 function select($con, $from, $count=1000){{
     $qu = $con->prepare("SELECT * FROM `{table}` LIMIT ?,?");
-    $st = $con->execute([$from, $count]);
+    $st = $con->execute([$count, $from]);
     return  !$st? new \\Err(ID_ERROR) : new \\Ok($st->fetchAll(\\PDO::FETCH_ASSOC));
 }}
 function select_id($con, $id){{
@@ -49,6 +49,15 @@ function insert_dto(\\PDO $con, $obj):\\Either{{
     $inset = substr($inset, 0, -1);
 	$qu = $con->prepare("INSERT INTO `message` ($set) 
         VALUES ($inset)
+    ");
+    $st = $qu->execute($obj);
+    return  !$st? new \\Err(ID_ERROR) : new \\Ok($obj);
+}}
+function insert_many(\\PDO $con, $count, $obj){{
+    {foreign_check}$set = '';
+    $inset = str_repeat('({many_arg})', $count);
+	$qu = $con->prepare("INSERT INTO `message` ($set) 
+        VALUES $inset
     ");
     $st = $qu->execute($obj);
     return  !$st? new \\Err(ID_ERROR) : new \\Ok($obj);
@@ -105,6 +114,7 @@ def parce_scheme(filename):
         , 'select_id':''
         , 'insert_param':''
         , 'insert_arr':''
+        , 'many_arg':''
         , 'update_param':''
         , 'update_arr':''
         , 'foreign_req':''
@@ -119,6 +129,7 @@ def parce_scheme(filename):
                 case [field]:
                     obj['insert_param'] += f'\n\t, ${field}'
                     obj['insert_arr'] += f" '{field}' => ${field}\n\t\t,"
+                    obj['many_arg'] += '?,'
                     obj['update_param'] += f'\n\t, ${field} = NULL'
                     obj['update_arr'] += f" '{field}' => ${field}\n\t\t,"
                 case [field, args]:
@@ -132,33 +143,46 @@ def parce_scheme(filename):
                         case w if w in ['DEFAULT', 'DEFAULT+UPDATE']:
                             insert_pool.append(f" '{field}' => ${field}\n\t\t,")
                             insert_param_pool.append(f"\n\t, ${field} = NULL")
+                            obj['update_param'] += f'\n\t, ${field} = NULL'
+                            obj['update_arr'] += f" '{field}' => ${field}\n\t\t,"
                         case 'UPDATE':
                             obj['insert_param'] += f'\n\t, ${field}'
                             obj['insert_arr'] += f" '{field}' => ${field}\n\t\t,"
+                            obj['many_arg'] += '?,'
                             obj['update_param'] += f'\n\t, ${field} = NULL'
                             obj['update_arr'] += f" '{field}' => ${field}\n\t\t,"
                 case [field, tab, to]:
+                    art = tab.split('+')
+                    tab = art[0]
+                    param = art[1] if 1 < len(art) else ''
                     to_model = f"Model_{tab.capitalize()}"
                     obj['foreign_req'] += f"\nrequire_once realpath(__DIR__ . '/../{to_model}/check');\n"
-                    obj['needed_check'][tab] = obj['needed_check'].get(tab) or '' + f"function check_{field}($con, ${field}){{\n\treturn check($con,\"`{field}`=?`\", ${field});\n}}"
+                    obj['needed_check'][tab] = obj['needed_check'].get(tab) or '' + f"function check_{to}($con, ${to}){{\n\treturn check($con,\"`{field}`=?`\", ${field});\n}}"
                     obj['foreign_check'] += f"if(! \\{to_model}\\check_{field}($con, $obj['{field}']) )\n\t\treturn ['status'=>ID_ERROR];\n\t"
-                    obj['param_id'] += f"\n\t, ${field}"
-                    obj['where_id'] += f"`{field}` = :{field}, "
-                    obj['update_id'] += f" '{field}' => ${field}\n\t\t,"
-                    obj['delete_id'] += f"'{field}' => ${field}, "
-                    obj['select_id'] += obj.get('select_id') + f" AND `{field}`=?" if obj.get('select_id') else f"`{field}`=?"
+                    if param == "PRIMARY":
+                        obj['param_id'] += f"\n\t, ${field}"
+                        obj['where_id'] += f"`{field}` = :{field}, "
+                        obj['update_id'] += f" '{field}' => ${field}\n\t\t,"
+                        obj['delete_id'] += f"'{field}' => ${field}, "
+                        obj['select_id'] += obj.get('select_id') + f" AND `{field}`=?" if obj.get('select_id') else f"`{field}`=?"
+                    else:
+                        obj['update_param'] += f'\n\t, ${field} = NULL'
+                        obj['update_arr'] += f" '{field}' => ${field}\n\t\t,"
                     obj['insert_param'] += f'\n\t, ${field}'
                     obj['insert_arr'] += f" '{field}' => ${field}\n\t\t,"
+                    obj['many_arg'] += '?,'
     
     for (i,k) in enumerate(insert_pool):
         obj['insert_arr'] += k
         obj['insert_param'] += insert_param_pool[i]
+        obj['many_arg'] += '?,'
 
     obj['where_id'] = obj['where_id'][:-2]
     # obj['param_id'] = obj['param_id'][:-3]
     # obj['insert_param'] = obj['insert_param'][:-3]
     # obj['update_param'] = obj['update_param'][:-3]
     obj['insert_arr'] = obj['insert_arr'][:-4]
+    obj['many_arg'] = obj['many_arg'][:-1]
     obj['update_arr'] = obj['update_arr'][:-4]
 
 
@@ -186,6 +210,7 @@ with os.scandir(path_scheme) as d:
                                              , foreign_req=parced['foreign_req']
                                              , foreign_check=parced['foreign_check']
                                              , insert_arr=parced['insert_arr']
+                                             , many_arg = parced['many_arg']
                                              , insert_param=parced['insert_param'])
             
             update_next = UPDATE_TEMP.format(table=table,Table=Table
