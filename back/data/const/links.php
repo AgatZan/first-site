@@ -1,5 +1,5 @@
 <?php
-define('P_MAIN','http://timosh-db.hw');
+define('P_MAIN','http://main-db.hw');
 
 define('DB_ENV',            $_SERVER['DOCUMENT_ROOT'] . '/database/.env');
 define('DB_CONNECT',        $_SERVER['DOCUMENT_ROOT'] . '/utils/gdb_connect.php');
